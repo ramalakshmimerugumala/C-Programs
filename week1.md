@@ -109,7 +109,13 @@ Example--Smart phone -android linux
          LG -Webos Linux
          Router -Openwrt(Open wireless router)linux
 
-## Day3
+## Day3 Development tools
+1.Text Editor: C program is written by using text editor
+2.Compiler- converts c statemnets into instruction
+Instructions contains Opcode and operands
+
+ 
+
 
 
 
