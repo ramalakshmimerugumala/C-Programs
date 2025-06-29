@@ -56,13 +56,60 @@ Soc's is designed by combining some of the best features of microcontroller and 
 | Best Feature           | All components integrated in one chip       | High performance & multitasking          |
 | Used in                | Embedded systems                             | General-purpose systems                  |
 
-
----
-
 ## ✅ Summary:
-
 - **Embedded System**: A specific-purpose mini-computer built around a microcontroller.
 - **Microcontroller**: All-in-one chip for small embedded applications.
 - **Microprocessor**: Only CPU; needs external parts.
 - **SoC**: Entire computer system on a single chip.
+
+  
+
+# Day 2 – System on Chip (SoC)
+##  Definition:
+A **System on Chip (SoC)** is an integrated chip that combines all the essential components of a computer system on a **single chip**.
+It includes:
+- CPU (like in microprocessors)
+- Memory (RAM, ROM)
+- I/O Ports (like in microcontrollers)
+- Peripherals (Wi-Fi, Bluetooth, Timers, ADC, etc.)
+ SoC is a **combination of the best features** of both **Microcontroller** and **Microprocessor**:
+- Like a **Microcontroller**: It has all components integrated into one chip
+- Like a **Microprocessor**: It supports high performance and multitasking
+# IDEs Used for Microcontroller Programming
+ What is an IDE?
+**IDE** stands for **Integrated Development Environment**.  
+It is a software that contains all the tools required to develop embedded software in one place.
+## 🔹 Tools Included in an IDE:
+1. **Text Editor** – for writing code  
+2. **Compiler** – to convert code into machine language  
+3. **Debugger** – to find and fix errors  
+4. **Loader / Linker** – to combine files and prepare output
+## 🔹 Popular IDEs for Microcontroller:
+### 1. **Arduino IDE**
+- Used for Arduino boards (UNO, Nano, Mega, etc.)
+- Beginner-friendly
+- Generates `.hex` files after compilation
+- Easy uploading via USB
+
+### 2. **Keil µVision IDE**
+- Used for 8051, ARM, and STM32 microcontrollers
+- Used in professional and industrial environments
+- Supports debugging, simulation, and memory configuration
+- Generates `.hex` files for flashing into microcontrollers
+## 🔹 What is a Hex File?
+Once your embedded C program is compiled, it generates a **`.hex` file**, which is the actual machine code that is loaded into the microcontroller.
+
+# Microprocessor
+Microprocessor can not uses the arduino and keil.It will uses the full fledged os(Macos,Windows,linux)
+
+# Soc's
+Soc also uses full fledged os i.e.,EmbeddedLinux(or)Variants of linux
+Example--Smart phone -android linux
+         Samsung smart tvs-TizenosLinux
+         LG -Webos Linux
+         Router -Openwrt(Open wireless router)linux
+
+## Day3
+
+
 
