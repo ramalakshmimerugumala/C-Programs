@@ -64,7 +64,7 @@ Soc's is designed by combining some of the best features of microcontroller and 
 
   
 
-# Day 2 – System on Chip (SoC)
+## Day 2 – System on Chip (SoC)
 ##  Definition:
 A **System on Chip (SoC)** is an integrated chip that combines all the essential components of a computer system on a **single chip**.
 It includes:
