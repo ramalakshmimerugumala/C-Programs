@@ -2,7 +2,7 @@
 program
 ## 1️⃣ Program to Find the Sum of Elements in an Array Using `while` Loop
 
-#include <stdio.h>
+```#include <stdio.h>
 int main() {
     int arr[4];
     int sum = 0;
@@ -20,7 +20,7 @@ int main() {
 
     printf("Sum of the elements: %d\n", sum);
     return 0;
-}
+} ```
 
 # Output
 Enter the elements
