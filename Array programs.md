@@ -1,9 +1,5 @@
 ## .WRITE A C PROGRAM TO FIND THE SUM OF ELEMENTS IN AN ARRAY USING A WHILE LOOP?
 program
-# Day 3 – C Programs on Arrays
-
----
-
 ## 1️⃣ Program to Find the Sum of Elements in an Array Using `while` Loop
 
 #include <stdio.h>
