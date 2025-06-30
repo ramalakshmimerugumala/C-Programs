@@ -1,8 +1,8 @@
 ## .WRITE A C PROGRAM TO FIND THE SUM OF ELEMENTS IN AN ARRAY USING A WHILE LOOP?
 program
 ## 1️⃣ Program to Find the Sum of Elements in an Array Using `while` Loop
-
-```#include <stdio.h>
+```
+#include <stdio.h>
 int main() {
     int arr[4];
     int sum = 0;
@@ -20,7 +20,7 @@ int main() {
 
     printf("Sum of the elements: %d\n", sum);
     return 0;
-} ```
+} 
 
 # Output
 Enter the elements
@@ -29,6 +29,7 @@ Enter the elements
 3
 4
 Sum of the elements10
+```
 
 # 2 Reverse of an array
 Program
