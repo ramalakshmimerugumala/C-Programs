@@ -70,14 +70,13 @@ int main(){
     }
 
     for(int i = 0; i < size; i++){
-        for(int j = i + 1; j < size;){
+        for(int j = i + 1; j < size;j++){
             if(arr[j] == arr[i]){
-                for(int k = j; k < size - 1; k++){
+                for(int k = j; k < size; k++){
                     arr[k] = arr[k + 1];
                 }
-                size--; 
-            } else {
-                j++; 
+                size--;
+                j--;
             }
         }
     }
