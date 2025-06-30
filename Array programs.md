@@ -33,6 +33,7 @@ Sum of the elements10
 
 # 2 Reverse of an array
 Program
+```
 #include <stdio.h>
 int main() {
    int arr[]={34,56,54,32,67,89,90,32,21};
@@ -53,5 +54,6 @@ Original array:
 34	56	54	32	67	89	90	32	21	
 reverse of the array:
 21	32	90	89	67	32	54	56	34
+```
 
 # 3.
