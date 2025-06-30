@@ -56,4 +56,43 @@ reverse of the array:
 21	32	90	89	67	32	54	56	34
 ```
 
-# 3.
+# 3.Remove duplicate elements in the array
+program
+```
+#include <stdio.h>
+int main(){
+    int arr[6];
+    int size = 6;
+
+    printf("Enter elements in the array:\n");
+    for(int i = 0; i < size; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    for(int i = 0; i < size; i++){
+        for(int j = i + 1; j < size;){
+            if(arr[j] == arr[i]){
+                for(int k = j; k < size - 1; k++){
+                    arr[k] = arr[k + 1];
+                }
+                size--; 
+            } else {
+                j++; 
+            }
+        }
+    }
+
+    printf("After removing duplicates:\n");
+    for(int i = 0; i < size; i++){
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+## Output
+Enter elements in the array:
+1 2 2 3 4 4
+After removing duplicates:
+1 2 3 4
+```
+
