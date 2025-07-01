@@ -32,3 +32,20 @@ Output
 4444
 ```
 ## Pattern3
+```
+#include <stdio.h>
+int main(){
+ for(int i='A';i<='E';i++){
+         for(char j='A';j<='E';j++){
+                 printf("%c ",j);
+         }
+         printf("\n");
+ }
+}
+Output
+A B C D E 
+A B C D E 
+A B C D E 
+A B C D E 
+A B C D E
+```
