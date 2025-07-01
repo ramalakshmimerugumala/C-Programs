@@ -233,4 +233,21 @@ D C B A
 E D C B A
 ```
 ## Pattern 14
-
+```
+#include <stdio.h>
+int main(){
+for(char i='E';i>='A';i--){
+        for(char j='A';j<=i;j++){
+                printf("%c",j);
+        }
+        printf("\n");
+}
+}
+Output
+ABCDE
+ABCD
+ABC
+AB
+A
+```
+## Pattern 15
