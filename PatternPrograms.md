@@ -306,4 +306,23 @@ E
 ```
 ## Pattern 18
 ```
+#include <stdio.h>
+int main() {
+    for(char i='E';i>='A';i--){
+        for(char j=i;j>='A';j--){
+            printf("%c ",j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+Output
+E D C B A 
+D C B A 
+C B A 
+B A 
+A
+```
+## Pattern 19
 
