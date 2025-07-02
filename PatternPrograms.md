@@ -251,3 +251,59 @@ AB
 A
 ```
 ## Pattern 15
+```
+#include <stdio.h>
+int main(){
+    for(char i='A';i<='E';i++){
+                for(char j=i;j<='E';j++){
+                        printf("%c",j);
+                }
+                printf("\n");
+        }
+}
+Output
+ABCDE
+BCDE
+CDE
+DE
+E
+```
+## Pattern 16
+```
+#include <stdio.h>
+int main(){
+    for(char i='E';i>='A';i--){
+                for(char j='E';j>=i;j--){
+                        printf("%c ",j);
+                }
+                printf("\n");
+        }
+}
+Output:
+E 
+E D 
+E D C 
+E D C B 
+E D C B A
+```
+## Pattern 17
+```
+#include <stdio.h>
+int main(){
+    for(char i='A';i<='E';i++){
+                for(char j='E';j>=i;j--){
+                        printf("%c ",j);
+                }
+                printf("\n");
+        }
+}
+Output:
+E D C B A 
+E D C B 
+E D C 
+E D 
+E
+```
+## Pattern 18
+```
+
