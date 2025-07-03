@@ -570,3 +570,28 @@ Output
  1234321
 123454321
 ```
+## Pattern 30
+```
+#include <stdio.h>
+int main(){
+int num;
+printf("Enter how many rows you want:");
+scanf("%d",&num);
+for(int i=num;i>=1;i--){
+        for(int k=1;k<=num-i;k++){
+                printf(" ");
+        }
+                for(int j=1;j<=i;j++){
+                        printf("* ");
+        }
+                printf("\n");
+}
+}
+Output
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+```
+## Pattern 31
