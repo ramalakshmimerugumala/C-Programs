@@ -595,3 +595,39 @@ Output
     * 
 ```
 ## Pattern 31
+```
+// Online C compiler to run C program online
+#include <stdio.h>
+int main() {
+  int num;
+  printf("Enter how many rows u want:");
+  scanf("%d",&num);
+  for(int i=1;i<=num;i++){
+      for(int k=1;k<=num-i;k++){
+          printf(" ");
+      }
+      for(int j=1;j<=2*i-1;j++){
+          printf("* ");
+      }
+      printf("\n");
+  }
+      for(int i=num-1;i>=1;i--){
+      for(int k=1;k<=num-i;k++){
+          printf(" ");
+      }
+      for(int j=1;j<=2*i-1;j++){
+          printf("* ");
+      }
+      printf("\n");
+}
+}
+output
+    * 
+   * * * 
+  * * * * * 
+ * * * * * * * 
+* * * * * * * * * 
+ * * * * * * * 
+  * * * * * 
+   * * * 
+     * 
