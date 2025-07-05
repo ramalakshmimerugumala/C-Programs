@@ -94,4 +94,47 @@ Enter elements in the array:
 After removing duplicates:
 1 2 3 4
 ```
+## Insertion of Element in the arry
+```
+// Online C compiler to run C program online
+#include <stdio.h>
+int main(){
+int arr[6];
+int position;
+int number;
+printf("Enter elements in the array:");
+for(int i=0;i<5;i++){
+        scanf("%d",&arr[i]);
+}
+printf("Original elements in the array:");
+for(int i=0;i<5;i++){
+        printf("%d",arr[i]);
+}
+printf("\nEnter the position");
+scanf("%d",&position);
+printf("\nEnter the number");
+scanf("%d",&number);
+for(int i=4;i>=position-1;i--){
+        arr[i+1]=arr[i];
+}
+        arr[position-1]=number;
+for(int i=0;i<=5;i++){
+        printf("%d\n",arr[i]);
+}
+}
+Output:
+Enter elements in the array:1
+2
+4
+7
+6
+Original elements in the array:12476
+Enter the position2
 
+Enter the number3
+1
+3
+2
+4
+7
+6
