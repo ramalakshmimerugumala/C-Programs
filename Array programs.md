@@ -212,4 +212,88 @@ Unique elements in the array
 5
 3
 ```
+## 7.. Write a program in C to find the sum of all elements of the array(2d arry)
+```
+#include <stdio.h>
+int main(){
+int arr[3][3];
+int i,j;
+printf("Enter the elements in the matrix:");
+for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+printf("Original matrix:\n");
+for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+                printf("%d\t",arr[i][j]);
+        }
+        printf("\n");
+}
+for(i=0;i<3;i++){
+        int sumrow=0;
+        int sumcol=0;
+  for(j=0;j<3;j++){
+          sumrow=sumrow+arr[i][j];
+          sumcol=sumcol+arr[j][i];
+  }
+  printf("\n sum of row=%d, sum of col=%d",sumrow,sumcol);
+}
+}
+output
+Enter the elements in the matrix:1
+2
+3
+4
+5
+6
+2
+7
+8
+Original matrix:
+1	2	3	
+4	5	6	
+2	7	8	
 
+ sum of row=6, sum of col=7
+ sum of row=15, sum of col=14
+ sum of row=17, sum of col=17
+```
+## 8.Write a program in C to find the sum of all elements of the array(1d arry)
+```
+#include <stdio.h>
+int main(){
+ int arr1[5];
+ int arr2[5];
+ int sum[5];
+ printf("Enter elements in the first array:");
+ for(int i=0;i<5;i++){
+   scanf("%d",&arr1[i]);
+ }
+ printf("enter elements in the second array:");
+ for(int i=0;i<5;i++){
+   scanf("%d",&arr2[i]);
+ }
+ for(int i=0;i<5;i++){
+        sum[i]=arr1[i]+arr2[i];
+        printf("sum of array index %d value is :%d\n",i,sum[i]);
+ }
+Output
+Enter elements in the first array:1
+2
+3
+4
+5
+enter elements in the second array:2
+3
+4
+5
+6
+sum of array index 0 value is :3
+sum of array index 1 value is :5
+sum of array index 2 value is :7
+sum of array index 3 value is :9
+sum of array index 4 value is :11
+```
+## 9.
