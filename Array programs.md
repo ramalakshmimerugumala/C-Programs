@@ -296,4 +296,76 @@ sum of array index 2 value is :7
 sum of array index 3 value is :9
 sum of array index 4 value is :11
 ```
-## 9.
+## 9.Write a program in C to sort elements of an array in ascending order
+```
+#include <stdio.h>
+int main(){
+int arr[5];
+printf("Enter elements in the array:");
+for(int i=0;i<5;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<5;i++){
+        for(int j=i+1;j<5;j++){
+                if(arr[i]>arr[j]){
+                     int temp=arr[i];
+                     arr[i]=arr[j];
+                     arr[j]=temp;
+                }
+        }
+}
+printf("Elements in ascending order\n");
+for(int i=0;i<5;i++){
+        printf("%d\n",arr[i]);
+}
+}
+output
+Enter elements in the array:1
+3
+4
+2
+6
+Elements in ascending order
+1
+2
+3
+4
+6
+```
+## 10  Write a program in C to sort the elements of the array in descending order
+```
+#include <stdio.h>
+int main(){
+int arr[5];
+printf("Enter elements in the array:");
+for(int i=0;i<5;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<5;i++){
+        for(int j=i+1;j<5;j++){
+                if(arr[i]<arr[j]){
+                     int temp=arr[i];
+                     arr[i]=arr[j];
+                     arr[j]=temp;
+                }
+        }
+}
+printf("Elements in descending order\n");
+for(int i=0;i<5;i++){
+        printf("%d\n",arr[i]);
+}
+}
+output
+Enter elements in the array:2
+4
+7
+1
+9
+Elements in descending order
+9
+7
+4
+2
+1
+```
+## 11.
