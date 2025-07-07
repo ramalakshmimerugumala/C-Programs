@@ -138,3 +138,42 @@ Enter the number3
 4
 7
 6
+```
+##  Write a program in C to count the total number of duplicate elements in an array.
+```
+#include <stdio.h>
+int main() {
+    int arr[6];
+    int count = 0;
+    printf("Enter elements in the array:\n");
+    for (int i = 0; i < 6; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < 6; i++) {
+        for (int j = i + 1; j < 6; j++) {
+            if (arr[i] == arr[j]) {
+                printf("Duplicate element %d at index %d and %d\n", arr[i], i, j);
+                count++;
+                break;  // Once counted, skip to next i
+            }
+        }
+    }
+    if (count == 0) {
+        printf("No duplicate elements in the array\n");
+    } else {
+        printf("Total duplicate elements found: %d\n", count);
+    }
+    return 0;
+}
+output
+Enter elements in the array:
+1
+2
+2
+3
+4
+5
+Duplicate element 2 at index 1 and 2
+Total duplicate elements found: 1
+```
+##
