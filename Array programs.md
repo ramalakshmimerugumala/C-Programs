@@ -368,4 +368,96 @@ Elements in descending order
 2
 1
 ```
-## 11.
+## 11. Write a program in C to merge two arrays of the same size sorted in descending order
+```
+#include <stdio.h>
+int main(){
+int arr1[5];
+int arr2[4];
+printf("Enter elements in  the array1:");
+for(int i=0;i<5;i++){
+        scanf("%d",&arr1[i]);
+}
+printf("Enter elements in the array2:");
+for(int i=0;i<4;i++){
+        scanf("%d",&arr2[i]);                               
+        }
+for(int i=0;i<4;i++){
+        arr1[5+i]=arr2[i];
+}
+printf("Merge of two arrays:");
+for(int i=0;i<9;i++){
+        printf("%d ",arr1[i]);
+}
+for(int i=0;i<9;i++){
+    for(int j=i+1;j<9;j++){
+        if(arr1[i]<arr1[j]){
+           int temp=arr1[i];
+            arr1[i]=arr1[j];
+            arr1[j]=temp;
+        }
+    }
+}
+printf("\nElements after descending order:");
+for(int i=0;i<9;i++){
+    printf("%d ",arr1[i]);
+}
+}
+Output
+Enter elements in  the array1:3
+2
+1
+8
+3
+Enter elements in the array2:9
+1
+4
+7
+Merge of two arrays:3 2 1 8 3 9 1 4 7 
+Elements after descending order:9 8 4 3 3 2 1 1 1
+```
+## 12. Write a program in C to count the frequency of each element of an array
+```
+#include <stdio.h>
+int main(){
+int arr[5];
+int frequency[5];
+printf("Enter elements in the array:");
+for(int i=0;i<5;i++){
+        scanf("%d",&arr[i]);
+        frequency[i]=-1;
+}
+for(int i=0;i<5;i++){
+        int count=1;
+        if(frequency[i]==0)
+                continue;
+        for(int j=i+1;j<5;j++){
+           if(arr[j]==arr[i]){
+                   count++;
+                   frequency[j]=0;
+}
+        }
+           frequency[i]=count;
+        }
+
+printf("Frequency of elements in the arrat are:");
+for(int i=0;i<5;i++){
+        if(frequency[i]!=0){
+        printf("%d occurs %d times\n",arr[i],frequency[i]);
+}
+
+}
+}
+output
+Enter elements in the array:1
+3
+2
+1
+4
+Frequency of elements in the arrat are:1 occurs 2 times
+3 occurs 1 times
+2 occurs 1 times
+4 occurs 1 times
+```
+
+
