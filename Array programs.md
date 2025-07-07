@@ -176,4 +176,40 @@ Enter elements in the array:
 Duplicate element 2 at index 1 and 2
 Total duplicate elements found: 1
 ```
-##
+##Write a program in C to print all unique elements in an array
+```
+#include <stdio.h>
+int main(){
+int arr[6];
+printf("Enter elements in the array:");
+for(int i=0;i<6;i++){
+        scanf("%d",&arr[i]);
+
+}
+printf("Unique elements in the array\n");
+for(int i=0;i<6;i++){
+        int unique=0;
+ for(int j=0;j<6;j++){
+         if(arr[i]==arr[j]){
+                 unique ++;
+         }
+}
+if(unique==1){
+  printf("%d\n",arr[i]);
+}
+}
+}
+output
+Enter elements in the array:1
+2
+4
+5
+3
+1
+Unique elements in the array
+2
+4
+5
+3
+```
+
