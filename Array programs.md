@@ -94,7 +94,7 @@ Enter elements in the array:
 After removing duplicates:
 1 2 3 4
 ```
-## Insertion of Element in the arry
+## 4 Insertion of Element in the arry
 ```
 // Online C compiler to run C program online
 #include <stdio.h>
@@ -139,7 +139,7 @@ Enter the number3
 7
 6
 ```
-##  Write a program in C to count the total number of duplicate elements in an array.
+## 5  Write a program in C to count the total number of duplicate elements in an array.
 ```
 #include <stdio.h>
 int main() {
@@ -176,7 +176,7 @@ Enter elements in the array:
 Duplicate element 2 at index 1 and 2
 Total duplicate elements found: 1
 ```
-##Write a program in C to print all unique elements in an array
+## 6Write a program in C to print all unique elements in an array
 ```
 #include <stdio.h>
 int main(){
