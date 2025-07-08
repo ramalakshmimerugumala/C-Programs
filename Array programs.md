@@ -212,7 +212,7 @@ Unique elements in the array
 5
 3
 ```
-## 7.. Write a program in C to find the sum of all elements of the array(2d arry)
+## 7.. Write a program in C to find the sum of rows and columns of the array(2d arry)
 ```
 #include <stdio.h>
 int main(){
@@ -459,5 +459,122 @@ Frequency of elements in the arrat are:1 occurs 2 times
 2 occurs 1 times
 4 occurs 1 times
 ```
+## 13 Write a program in C to find the second largest element in an array
+```
+#include <stdio.h>
+int main(){
+int arr[8];
+int max1=arr[0];
+int max2=arr[0];
+printf("Enter elements in the array:");
+for(int i=0;i<8;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<8;i++){
+        if(arr[i]>max1){
+                max2=max1;
+                max1=arr[i];
+        }
+        else if(arr[i]>max2&&arr[i]<max1){
+                max2=arr[i];
+        }
+           }
+printf("Largest number in the array is %d:",max1);
+printf("\nSecond largest number in the arry is %d:",max2);
+}
 
+Output
+Enter elements in the array:2
+4
+1
+7
+3
+8
+4
+1
+Largest number in the array is 8:
+Second largest number in the arry is 7
+```
+## Write a program in C to find the second smallest element in an array.
+```
+#include <stdio.h>
+int main(){
+int arr[7];
+printf("Enter elements in the array:");
+for(int i=0;i<7;i++){
+        scanf("%d",&arr[i]);
+}
+        int min=arr[0];
+        int second_min=arr[0];
+for(int i=0;i<7;i++){
+        if(arr[i]<min){
+                second_min=min;
+                min=arr[i];
+        }
+        else if(arr[i]<second_min && arr[i]>min){
+                second_min=arr[i];
+        }
+}
+}
+printf("Second minimum number %d",second_min);
+Output
+Enter elements in the array:7
+2
+8
+6
+4
+3
+7
+Second minimum number 3
+```
+## 15 Write a program in C for adding two matrices of the same size
+```
+#include <stdio.h>
+int main(){
+int arr1[2][3];
+int arr2[2][3];
+int arr3[2][3];
+printf("Enter elements:");
+for(int i=0;i<2;i++){
+ for(int j=0;j<3;j++){
+        scanf("%d",&arr1[i][j]);
+ }
+}
+printf("Enter elements:");
+for(int i=0;i<2;i++){
+        for(int j=0;j<3;j++){
+                scanf("%d",&arr2[i][j]);
+        }
+}
+for(int i=0;i<2;i++){
+        for(int j=0;j<3;j++){
+                arr3[i][j]=arr1[i][j]+arr2[i][j];
+}
 
+}
+printf("sum of two matrices :\n");
+for(int i=0;i<2;i++){
+        for(int j=0;j<3;j++){
+                printf("%d\t",arr3[i][j]);
+}
+printf("\n");
+}
+}
+Output
+Enter elements:5
+2
+1
+1
+2
+1
+Enter elements:1
+1
+1
+1
+1
+1
+sum of two matrices :
+6	3	2	
+2	3	2
+```
+## 16 
