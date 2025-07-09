@@ -650,3 +650,60 @@ Enter elements in the matrix:1
 2
 3
 Sum of left  diagonal is 6
+```
+## Write a program in C to print or display the lower triangular of a given matrix.
+```
+#include <stdio.h>
+int main(){
+int arr[30][30];
+int n;
+printf("Enter the size if the matrix");
+scanf("%d",&n);
+printf("Enter the elements in the matrix:");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+printf("Original matrix\n");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d ",arr[i][j]);
+        }
+}
+        printf("\n");
+}
+printf("Lower triangle matrix is\n");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                if(i>=j)
+                 printf("%d",arr[i][j]);
+                else
+                        printf(" ");
+        }
+        printf("\n");
+}
+}
+output
+Enter the size if the matrix3
+Enter the elements in the matrix:1
+2
+
+3
+4
+5
+6
+7
+8
+9
+Original matrix
+1 2 3 
+4 5 6 
+7 8 9 
+Lower triangle matrix is
+1  
+45 
+789
+```
+## Write a program in C to print or display an upper triangular matrix.
+```
