@@ -577,4 +577,76 @@ sum of two matrices :
 6	3	2	
 2	3	2
 ```
-## 16 
+## 16 Write a program in C to find the sum of the right diagonals of a matrix.
+```
+#include <stdio.h>
+int main(){
+int n;
+int mat[30][30];
+int sum=0;
+printf("Enter the size of the matrix:");
+scanf("%d",&n);
+printf("Enter the elements in the matrix:");
+for(int i=0;i<n;i++){
+for(int j=0;j<n;j++){
+        scanf("%d",&mat[i][j]);
+}
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                if(i+j==n-1){
+                        sum=sum+mat[i][j];
+                       }
+        }
+}
+        printf("sum of rightdiagonal matrix %d",sum);
+}
+output
+Enter the size of the matrix:3
+Enter the elements in the matrix:1
+2
+3
+1
+2
+3
+1
+2
+3
+sum of rightdiagonal matrix 6
+```
+## 17.Write a program in C to find the sum of the left diagonals of a matrix
+```
+#include <stdio.h>
+int main(){
+int arr[20][20];
+int n,sum=0;
+printf("Size of the matrix:");
+scanf("%d",&n);
+printf("Enter elements in the matrix:");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                if(i==j){
+                        sum=sum+arr[i][j];
+                }
+   }
+        }
+}
+printf("Sum of left  diagonal is %d:",sum);
+}
+output
+Size of the matrix:3
+Enter elements in the matrix:1
+2
+3
+1
+2
+3
+1
+2
+3
+Sum of left  diagonal is 6
