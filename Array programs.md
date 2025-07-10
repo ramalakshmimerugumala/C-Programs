@@ -651,7 +651,7 @@ Enter elements in the matrix:1
 3
 Sum of left  diagonal is 6
 ```
-## Write a program in C to print or display the lower triangular of a given matrix.
+## 18 Write a program in C to print or display the lower triangular of a given matrix.
 ```
 #include <stdio.h>
 int main(){
@@ -688,7 +688,6 @@ output
 Enter the size if the matrix3
 Enter the elements in the matrix:1
 2
-
 3
 4
 5
@@ -705,5 +704,96 @@ Lower triangle matrix is
 45 
 789
 ```
-## Write a program in C to print or display an upper triangular matrix.
+## 19 Write a program in C to print or display an upper triangular matrix
 ```
+#include <stdio.h>
+int main(){
+int arr[30][30];
+int n;
+printf("Enter the size if the matrix");
+scanf("%d",&n);
+printf("Enter the elements in the matrix:");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+printf("Original matrix\n");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+}
+printf("upper triangle matrix is\n");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                if(i<=j)
+ printf("%d",arr[i][j]);
+
+                else
+                        printf(" ");
+
+        }
+        printf("\n");
+
+}
+}
+output
+Enter the size if the matrix3
+Enter the elements in the matrix:1
+2
+3
+4
+5
+6
+7
+8
+6
+Original matrix
+1 2 3 
+4 5 6 
+7 8 6 
+upper triangle matrix is
+123
+ 56
+  6
+```
+## 20 Write a program in C to calculate the determinant of a 3 x 3 matrix.
+```
+# include <stdio.h>
+int main(){
+int arr[3][3];
+int determinant;
+printf("Enter elements in the matrix:");
+for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+        scanf("%d",&arr[i][j]);
+        }
+}
+for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+                printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+}
+determinant=arr[0][0]*((arr[1][1]*arr[2][2])-(arr[1][2]*arr[2][1]))-
+            arr[0][1]*((arr[1][0]*arr[2][2])-(arr[2][0]*arr[1][2]))+
+            arr[0][2]*((arr[1][0]*arr[2][1])-(arr[2][0]*arr[1][1]));
+printf("Determinant matrix is %d",determinant);
+}
+Enter elements in the matrix:1
+2
+3
+1
+2
+3
+1
+2
+3
+1 2 3 
+1 2 3 
+1 2 3 
+Determinant matrix is 0
+```
+##
