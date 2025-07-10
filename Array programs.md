@@ -796,7 +796,7 @@ Enter elements in the matrix:1
 1 2 3 
 Determinant matrix is 0
 ```
-## Write a program in C to accept two matrices and check whether they are equal.
+## 21 Write a program in C to accept two matrices and check whether they are equal.
 ```
 #include <stdio.h>
 int main(){
@@ -850,4 +850,71 @@ Enter the elements in the array22
 9
 Two arrays are not equal
 ```
-##
+## 22 Write a program in C to find the missing number in a given array. There are no duplicates in
+the list.
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n,sum=0;
+int expected_sum=0;
+printf("Enter size of an array");
+scanf("%d",&n);
+printf("Enter elements in the array:");
+for(int i=0;i<n;i++){
+scanf("%d",&arr[i]);
+}
+for(int i=0;i<n;i++){
+        sum=sum+arr[i];
+}
+
+        expected_sum=(n+1)*(n+2)/2;
+        int missing=expected_sum-sum;
+printf("Missing number is %d\n",missing);
+}
+output
+Enter size of an array5
+Enter elements in the array:1
+2
+4
+5
+6
+```
+## 23 Write a program in C to find the majority element of an array.
+(A majority element in an array A[] of size n is an element that appears more than n/2 times
+(and hence there is at most one such element).
+```
+#include <stdio.h>
+int main(){
+        int arr[100];
+        int n;
+        printf("Enter the size of the array:");
+        scanf("%d",&n);
+        printf("Enter the elements in the array:");
+        for(int i=0;i<n;i++){
+                scanf("%d",&arr[i]);
+        }
+        for(int i=0;i<n;i++){
+                int count=0;
+                for(int j=0;j<n;j++){
+                if(arr[i]==arr[j])
+                        count ++;
+                }
+
+                if(count>n/2){
+                        printf("Majority of elements %d",arr[i]);
+                        return 0;
+                }
+        }
+                printf("No majority elements in the arry");
+}
+output
+Enter the size of the array:5
+Enter the elements in the array:1
+1
+1
+1
+2
+Majority of elements 1
+```
+## 24
