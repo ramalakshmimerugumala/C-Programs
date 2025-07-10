@@ -796,4 +796,58 @@ Enter elements in the matrix:1
 1 2 3 
 Determinant matrix is 0
 ```
+## Write a program in C to accept two matrices and check whether they are equal.
+```
+#include <stdio.h>
+int main(){
+int arr1[3][3];
+int arr2[3][3];
+int equal=1;
+printf("Enter the elements in the first array:");
+for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+                scanf("%d",&arr1[i][j]);
+        }
+}
+printf("Enter the elements in the array2");
+for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+                scanf("%d",&arr2[i][j]);
+        }
+}
+for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+                if(arr1[i][j]!=arr2[i][j]){
+                        equal=0;
+                        break;
+        }
+}
+
+}
+if(equal)
+        printf("Two array are equal");
+else
+        printf("Two arrays are not equal");
+}
+output
+Enter the elements in the first array:1
+2
+3
+1
+4
+5
+6
+8
+0
+Enter the elements in the array22
+3 
+5
+1
+7
+8
+2
+6
+9
+Two arrays are not equal
+```
 ##
