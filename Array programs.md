@@ -1073,7 +1073,7 @@ int n;
 char ch[500];
 printf("Enter how many  character u want:");
 scanf("%d",&n);
-printf("Enter a %d character:\n",n);
+printf("Enter a character:");
 for(int i=0;i<n;i++){
 scanf(" %c",&ch[i]);
 }
@@ -1097,4 +1097,42 @@ Ascii value of a character 'R' is  82
 ```
 ## 29.C Program To Find Two Elements whose Sum is Closest to Zero
 ```
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+int arr[300];
+int n;
+int num1=0;
+int num2=0;
+int min_num=999999;
+printf("Enter size of an array:");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+                int sum=arr[i]+arr[j];
+                if(abs(sum)<min_num){
+                     min_num=abs(sum);
+                     num1=arr[i];
+                     num2=arr[j];
+                }
+        }
+}
+printf("the numbers which are closest to the zero are %d and %d\n",num1,num2);
+printf("Sum of the two numbers are %d",num1+num2);
+}
+output
+Enter size of an array:5
+Enter the elements in the array5
+6
+-2
+3
+-1
+the numbers which are closest to the zero are -2 and 3
+Sum of the two numbers are 1
+```
+## 30.
 
