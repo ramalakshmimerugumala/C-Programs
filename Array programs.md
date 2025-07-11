@@ -917,4 +917,184 @@ Enter the elements in the array:1
 2
 Majority of elements 1
 ```
-## 24
+## 24 Write a program in C to find the two repeating elements in a given array.
+```
+#include <stdio.h>
+int main(){
+int arr[50];
+int n;
+int found=0;
+printf("Enter size of an array:");
+scanf("%d",&n);
+printf("Enter elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<n;i++){
+        int count=1;
+        if(arr[i]==-1)
+                continue;
+        for(int j=i+1;j<n;j++){
+                if(arr[i]==arr[j]){
+                        count++;
+                        arr[j]=-1;
+                }
+
+        }
+        if(count>1){
+          printf(" repeating elements in the array are %d",arr[i]);
+                found++;
+        }
+}
+if(found==0)
+printf("No repeating elemnts:");
+}                                       
+Output:
+Enter size of an array:6
+Enter elements in the array1
+2
+3
+4
+1
+2
+1 2
+```
+## 25 Write a program to check if a given element is present in an array.
+```
+#include <stdio.h>
+int main(){
+int arr[50];
+int n;
+int found=0;
+int number;
+printf("Enter the size of an array:");
+scanf("%d",&n);
+printf("Enter the elements in the array:");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+printf("Enter a number:");
+scanf("%d",&number);
+for(int i=0;i<n;i++){
+                if(arr[i]==number){
+                        found=1;
+                }
+        }
+
+            if(found){
+                printf("The number %d is present in the array",number);
+            }
+      else{
+                printf("The number %d is not present in the array ",number);
+        }
+
+}
+output
+Enter the size of an array:5
+Enter the elements in the array:1
+2
+3
+4
+5
+Enter a number:2
+The number 2 is present in the array
+```
+## 26 Write a program to count the number of even and odd elements in an array
+```
+#include <stdio.h>
+int main(){
+int arr[10];
+int even,odd;
+even=0;
+odd=0;
+printf("Enter elements in the array:");
+for(int i=0;i<10;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<10;i++){
+        if(arr[i]%2==0){
+          even++;
+        }
+
+        else{
+           odd++;
+        }
+}
+printf("count of the even numbers :%d\n",even);
+printf("count of the odd numbers :%d\n",odd);
+
+}
+output
+Enter elements in the array:1
+2
+3
+5
+7
+2
+8
+9
+1
+7
+count of the even numbers :3
+count of the odd numbers :7
+```
+## 27  Print Square of Array Elements in C
+```
+#include <stdio.h>
+int main(){
+int arr[50];
+int n;
+printf("Enter the size of an array:");
+scanf("%d",&n);
+printf("Enter the elements in the array:");
+for(int i=0;i<n;i++){
+scanf("%d",&arr[i]);
+}
+printf("Square of elements in the array:");
+for(int i=0;i<n;i++){
+        int square=arr[i]*arr[i];
+        printf("%d ",square);
+}
+}
+output
+Enter the size of an array:5
+Enter the elements in the array:1
+2
+3
+4
+5
+Square of elements in the array:1 4 9 16 25
+```
+## 28 Print Ascii Values using Array in C
+```
+#include <stdio.h>
+int main(){
+int n;
+char ch[500];
+printf("Enter how many  character u want:");
+scanf("%d",&n);
+printf("Enter a %d character:\n",n);
+for(int i=0;i<n;i++){
+scanf(" %c",&ch[i]);
+}
+for(int i=0;i<n;i++){
+printf("Ascii value of a character '%c' is  %d\n",ch[i],ch[i]);
+}
+}
+output
+Enter how many  character u want:5
+Enter a 5 character:
+4
+A
+a
+r
+R
+Ascii value of a character '4' is  52
+Ascii value of a character 'A' is  65
+Ascii value of a character 'a' is  97
+Ascii value of a character 'r' is  114
+Ascii value of a character 'R' is  82
+```
+## 29.C Program To Find Two Elements whose Sum is Closest to Zero
+```
+
