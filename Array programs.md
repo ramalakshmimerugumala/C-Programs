@@ -1134,5 +1134,176 @@ Enter the elements in the array5
 the numbers which are closest to the zero are -2 and 3
 Sum of the two numbers are 1
 ```
-## 30.
-
+## 30.C Program to Print all Non Repeated Elements in an Array
+```
+#include <stdio.h>
+int main(){
+int arr[50];
+int n;
+int nonrepeated=1;
+int count=0;
+printf("Enter the size of the array:");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<n;i++){
+        count=0;
+        for(int j=0;j<n;j++){
+                if (i!=j && arr[i]==arr[j]){
+                        count++;
+        }
+        }
+        if(count==0){
+                printf(" non repeated elements %d",arr[i]);
+                nonrepeated=0;
+        }
+}
+if(nonrepeated==1){
+        printf("No non repeated elements in the array");
+}
+}
+output
+Enter the size of the array:5
+Enter the elements in the array1
+2
+3
+1
+2
+ nonrepeated elements 3
+```
+## 31 Write a program to write all the elements of 2-D Array into !-D Array in row wise
+```
+#include <stdio.h>
+int main(){
+int arr[100][100];
+int arr1d[100];
+int index=0;
+int n;
+printf("Enter the size of an array:");
+scanf("%d",&n);
+printf("Enter the elements in the array:");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d ",arr[i][j]);
+              }
+        printf("\n");
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+    arr1d[index++]=arr[i][j];
+        }
+}
+printf("1D array in the row wise is:\n");
+for(int i=0;i<index;i++){
+ printf("%d",arr1d[i]);
+}
+}
+output
+Enter the size of an array:2
+Enter the elements in the array:1
+2
+1
+2
+1 2 
+1 2 
+1D array in the row wise is:
+1212
+```
+## 32 Write a program to check if elements of an array are distinct or not.
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+int count;
+printf("Enter the size of an array:");
+scanf("%d",&n);
+printf("Enter the elemnts in the array:");
+for(int i=0;i<n;i++){
+scanf("%d",&arr[i]);
+}
+for(int i=0;i<n;i++){
+        count=0;
+        for(int j=0;j<n;j++){
+                if(i!=j&&arr[i]==arr[j]){
+                        count++;
+                }
+ }
+}
+        if(count==0){
+                printf("Elements are distinct");
+        }
+        if(count==1){
+                printf("Elements are non distinct");
+        }
+}
+output
+Enter the size of an array:4
+Enter the elemnts in the array:1
+2
+1
+2
+Elements are non distinct
+```
+## 33 Write a program to remove duplicate elements from a sorted array
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+int count;
+printf("Enter the size of an array:");
+scanf("%d",&n);
+printf("Enter the elements in the array:");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+                if(arr[i]>arr[j]){
+                        int temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                       }
+        }
+}
+printf("sorted array:");
+for(int i=0;i<n;i++){
+        printf("%d",arr[i]);
+}
+for(int i=0;i<n;i++){
+        int count=0;
+        for(int j=i+1;j<n;j++){
+                if(arr[i]==arr[j]){
+                        for(int k=j;k<n;k++){
+                                arr[k]=arr[k+1];
+                        count ++;
+                }
+                n--;
+                j--;
+ }
+}
+}
+printf("\nAfter removing duplicates:");
+for(int i=0;i<n;i++){
+        printf("%d",arr[i]);
+}
+}
+output
+Enter the size of an array:5
+Enter the elements in the array:1
+3
+1
+2
+4
+sorted array:11234
+After removing duplicates:1234
+```
+##
