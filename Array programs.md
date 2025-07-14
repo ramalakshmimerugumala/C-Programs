@@ -1306,4 +1306,54 @@ Enter the elements in the array:1
 sorted array:11234
 After removing duplicates:1234
 ```
-##
+## 34. Write a program to write whether a matrix is symmetric or not
+```
+#include <stdio.h>
+int main(){
+ int arr[3][3];
+int  issymmetric=1;
+ printf("Enter elements in the matrix");
+ for(int i=0;i<3;i++){
+         for(int j=0;j<3;j++){
+                 scanf("%d",&arr[i][j]);
+         }
+ }
+ for(int i=0;i<3;i++){
+         for(int j=0;j<3;j++){
+                 printf("%d",arr[i][j]);
+         }
+         printf("\n");
+ }
+ for(int i=0;i<3;i++){
+         for(int j=0;j<3;j++){
+                 if(arr[i][j]!=arr[j][i]){
+                        issymmetric=0;
+
+                 }
+                      }
+
+                 }
+         }
+ if(issymmetric){
+         printf("The matrix is symmetric matrix");
+ }
+ else{
+         printf("The matrix is not symmetric");
+ }
+}
+
+output
+Enter elements in the matrix1
+2
+3
+2
+5
+6
+3
+6
+9
+123
+256
+369
+The matrix is symmetric matrix
+```
