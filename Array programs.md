@@ -1357,3 +1357,138 @@ Enter elements in the matrix1
 369
 The matrix is symmetric matrix
 ```
+## 35 Write a program in C for the multiplication of two square matrices.
+```
+#include <stdio.h>
+int main(){
+int arr1[100][100];
+int arr2[100][100];
+int m,n;
+int result[100][100];
+printf("Enter the size of m");
+scanf("%d",&m);
+printf("Enter the size of n");
+scanf("%d",&n);
+printf("Enter the elements ");
+for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+        scanf("%d",&arr1[i][j]);
+}
+}
+printf("Enter the elements ");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+        scanf("%d",&arr2[i][j]);
+}
+}
+for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+                result[i][j]=0;
+        }
+}
+for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+                for(int k=0;k<m;k++){
+                result[i][j]+=arr1[i][k]*arr2[k][j];
+        }
+}
+}
+printf("Resultant matrix is");
+for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+                printf("%d ",result[i][j]);
+        }
+        printf("\n");
+}
+}
+output
+Enter the size of m3
+Enter the size of n3
+Enter the elements 1
+2
+3
+1
+2
+3
+1
+2
+3
+Enter the elements 1
+2
+3
+1
+2
+3
+1
+2
+3
+Resultant matrix is6 12 18 
+6 12 18 
+6 12 18
+```
+## 36 Write a program to find the sum of rows and columns of a 2-d array and store the sums in
+the same array.
+```
+#include <stdio.h>
+int main(){
+int arr[5][6];
+int total=0;
+printf("Enter the elements in the array:");
+for(int i=0;i<4;i++){
+        for(int j=0;j<5;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+for(int i=0;i<4;i++){
+        int rowsum=0;
+        for(int j=0;j<5;j++){
+                rowsum+=arr[i][j];
+        }
+        arr[i][5]=rowsum;
+        total+=rowsum;
+}
+for(int j=0;j<5;j++){
+        int colsum=0;
+        for(int i=0;i<4;i++){
+                colsum+=arr[i][j];
+        }
+        arr[4][j]=colsum;
+}
+arr[4][5]=total;
+printf("Final matrix\n");
+for(int i=0;i<5;i++){
+        for(int j=0;j<6;j++){
+                printf("%d\t",arr[i][j]);
+        }
+        printf("\n");
+}
+}
+output
+Enter the elements in the array:1
+2
+2
+1
+4
+5
+4
+3
+2
+5
+6
+3
+2
+1
+4
+3
+5
+4
+2
+3
+Final matrix
+1	2	2	1	4	10	
+5	4	3	2	5	19	
+6	3	2	1	4	16	
+3	5	4	2	3	17	
+15	14	11	6	16	62
+```
+## 37.
