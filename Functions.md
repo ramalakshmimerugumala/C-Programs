@@ -25,3 +25,32 @@ Enter elements1
 7
 7 6 5 4 3 2 1
   ```
+## 2 . Create a function to calculate the average of elements in an array
+```
+#include <stdio.h>
+void average();
+int main(){
+        average();
+}
+void average(){
+  int arr[5];
+  int sum=0;
+  printf("Enter elements in the array:");
+  for(int i=0;i<5;i++){
+          scanf("%d",&arr[i]);
+  }
+  for(int i=0;i<5;i++){
+          sum=sum+arr[i];
+  }
+          int average=sum/5;
+          printf("Average =%d",average);
+}
+output
+Enter elements in the array:1
+2
+3
+4
+5
+Average =3
+```
+##3.
