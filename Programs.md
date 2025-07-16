@@ -1,4 +1,4 @@
-## check wheather the number is divisible by 3 or 5 but not both
+## 1. check wheather the number is divisible by 3 or 5 but not both
 ```
 #include <stdio.h>
 int main(){
@@ -19,7 +19,7 @@ Enter a number:
 3
 It is divisible by 3 or 5 but not both
 ```
-## Check wheather the entered character is alphabet or not using logical operator
+## 2.Check wheather the entered character is alphabet or not using logical operator
 ```
 #include <stdio.h>
 int main(){
@@ -37,3 +37,26 @@ output
 Enter a character:#
 It is not an alphabet
 ```
+## 3. Write the program to count the no of words in a string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+int i=0;
+int wordcount=0;
+printf("Enter a string ");
+fgets(str,sizeof(str),stdin);
+while(str[i]!='\0'){
+        if((str[i]!=' '&&str[i]!='\n')&&
+         (str[i+1]==' ' ||str[i+1]=='\n'||str[i+1]=='\0')){
+        wordcount++;
+        }
+i++;
+}
+printf("No.of words in a  string %d",wordcount);
+}
+output
+Enter a string moon sun
+No.of words in a  string 2
+```
+
