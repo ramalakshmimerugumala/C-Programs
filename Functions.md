@@ -53,4 +53,23 @@ Enter elements in the array:1
 5
 Average =3
 ```
-##3.
+##3. Call by value
+```
+#include <stdio.h>
+void fun(int,int);
+void main(){
+        int x=8,y=6;
+        fun(x,y);
+        printf("x=%d y=%d",x,y);
+}
+void fun(int x,int y){
+         x=5;
+         y=7;
+printf("x=%d y=%d",x,y);
+}
+output
+x=5 y=7x=8 y=6
+```
+## 4.Call by reference
+```
+
