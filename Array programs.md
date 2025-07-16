@@ -1490,4 +1490,35 @@ Final matrix
 3	5	4	2	3	17	
 15	14	11	6	16	62
 ```
-## 37.
+## 37. program to find sumof adjacent elements in the array and print the highest sum
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+int sum=0;
+printf("Enter the size of the array:");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+ scanf("%d",&arr[i]);
+}
+int max=arr[0]+arr[1];
+for(int i=0;i<n-1;i++){
+         sum=arr[i]+arr[i+1];
+        if(sum>max){
+                max=sum;
+        }
+}
+printf("Highest adjacent side element %d\n",max);
+}
+output
+Enter the size of the array:5
+Enter the elements in the array1
+2
+3
+4
+5
+Highest adjacent side element 9
+```
+## 38
