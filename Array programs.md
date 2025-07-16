@@ -634,7 +634,7 @@ for(int i=0;i<n;i++){
                 }
    }
         }
-}
+
 printf("Sum of left  diagonal is %d:",sum);
 }
 output
