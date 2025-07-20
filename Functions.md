@@ -154,6 +154,7 @@ Enter a number5
 Number is prime
 ```
 ## 7.
+```
 #include <stdio.h>
 #include <math.h>
 int prime(int num1,int num2);
