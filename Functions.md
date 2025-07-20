@@ -123,5 +123,71 @@ output
 Enter a number323
 number is palindrome
 ```
-## 6
+## 6 prime 
+```
+#include <stdio.h>
+#include <math.h>
+int isprime(int n);
+int main(){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+        if(isprime(number)){
+                printf("Number is prime");
+        }else{
+                printf("Number is not prime");
+        }
+}
+int isprime(int n){
+        int i;
+        for(i=2;i<=sqrt(n);i++){
+                if (n%2==0){
+                 return 0;
+                }
+                else{
+                        return 1;
+                }
+        }
+}
+output
+Enter a number5
+Number is prime
+```
+## 7.
+#include <stdio.h>
+#include <math.h>
+int prime(int num1,int num2);
+int isprime(int num);
+int main(){
+        int num1,num2;
+        printf("Enter two numbers:");
+        scanf("%d%d",&num1,&num2);
+        printf("Prime numbers between %d and %d are",num1,num2);
+        prime(num1,num2);
+}
+
+int prime(int num1,int num2){
+        int i;
+        for(i=num1;i<=num2;i++)
+                if(isprime(i))
+                        printf("%d ",i);
+                        }
+int isprime(int n)
+{
+        int i;
+        for (int i=2;i<=sqrt(n);i++){
+                if(n%i==0){
+                        return 0;
+                }
+        }
+
+                return 1;
+}
+output
+Enter two numbers:2
+8
+Prime numbers between 2 and 8 are2 3 5 7 
+```
+
+
 
