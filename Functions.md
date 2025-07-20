@@ -87,3 +87,41 @@ void fun(int *x,int *y){
 }
 output
 x=5 y=6x=5 y=6
+```
+## 5 palindrome
+```#include <stdio.h>
+int reverse(int n);
+int ispalindrome(int num);
+int main(){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+        if (ispalindrome(number))
+                printf("number is palindrome");
+        else{
+                printf("Number is not plaindrome");
+        }
+}
+int reverse(int n){
+        int rev=0;
+        int r;
+        while(n>0){
+ r=n%10;
+        rev=rev*10+r;
+        n/=10;
+        }
+        return rev;
+}
+int ispalindrome(int num){
+        if(num==reverse(num))
+                return 1;
+        else{
+                return 0;
+        }
+}
+output
+Enter a number323
+number is palindrome
+```
+## 6
+
