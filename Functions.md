@@ -343,7 +343,46 @@ Enter your choices
 Enter a number17
 Octal to Binary  15
 ```
+## Write a program to implement these formulae of permutations and combinations.
+Number of permutations of n objects taken r at a time: p(n, r) = n! / (n-r)!
+Number of combinations of n objects taken r at a time is: c(n, r) = n! / (r! * (n-r)!) = p(n, r) /r!
+```
+#include <stdio.h>
+int factorial(int n);
+int perm(int num,int r);
+int comb(int numb,int r);
+int main(){
+        int number,r;
+        printf("Enter a number and r");
+        scanf("%d%d",&number,&r);
+        printf("%d\n",perm(number,r));
+        printf("%d\n",comb(number,r));
+}
+int factorial(int n){
+        int fact=1;
+        for(int i=1;i<=n;i++){
+                fact=fact*i;
+        }
+        return fact;
+       }
+int perm(int num,int r){
+        int p;
+        p=factorial(num)/factorial(num-r);
+         return p;
+}
+int comb(int numb,int r){
+        int c;
+        c=perm(numb,r)/factorial(r);
+        return c;
+}
+output
+Enter a number and r 5
+3
+ permutation 60
+ combination 10
+```
+##
 
 
-                
+       
 
