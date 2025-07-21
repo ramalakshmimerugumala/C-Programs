@@ -438,7 +438,203 @@ output
 Enter a number60
 2235
 ```
-## 
+##  Write a function that inputs a number and prints the multiplication table of that number
+```
+#include <stdio.h>
+int Multiplication(int n);
+int main(){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+        Multiplication(number);
+}
+int Multiplication(int n){
+        for(int i=1;i<=10;i++){
+                printf("%d*%d=%d\n",n,i,n*i);
+        }
+}
+output
+Enter a number4
+4*1=4
+4*2=8
+4*3=12
+4*4=16
+4*5=20
+4*6=24
+4*7=28
+4*8=32
+4*9=36
+4*10=40
+```
+## Armstrong
+```
+#include <stdio.h>
+int cubesum(int n);
+int printarmstrong(int n);
+int main(){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+        cubesum(number);
+        printarmstrong(number);
+}
+int cubesum(int num){
+        int digit,rem=0;
+        while(num>0){
+        digit=num%10;
+        rem=rem+digit*digit*digit;
+        num=num/10;
+}
+return rem;
+}
+int printarmstrong(int n){
+        if(n==cubesum(n)){
+                printf("It is an armstrong number");
+        }
+        else{
+        printf("Not an armstrong number");
+}
+return 0;
+}
+output
+enter a number 152
+not an armstrong number
+```
+## Write a function cubesum() that accepts an integer and returns the sum of the cubes of individual digits of that
+number. Use this function to make functions PrintArmstrong() and isArmstrong () to print Armstrong numbers
+and to find whether a number is an Armstrong number.
+```
+#include <stdio.h>
+int cubesum(int n);
+int Armstrong(int n);
+int printarmstrong();
+int main(){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+        if(isArmstrong(number))
+                printf("%d is an Armstrong Number",number);
+        else
+           printf("%d is not an armstrong number",number);
+        printarmstrong();
+}
+int cubesum(int num){
+        int digit,rem=0;
+        while(num>0){
+digit=num%10;
+        rem=rem+digit*digit*digit;
+        num=num/10;
+}
+return rem;
+}
+int isArmstrong(int n){
+        return(n==cubesum(n));
+}
+int printarmstrong(){
+        printf("\nArmstrong numbers between 1 to 1000 are:\n");
+        for(int i=1;i<1000;i++){
+                if(isArmstrong(i))
+                        printf("%d\t",i);
+        }
+
+printf("\n");
+}
+output
+Enter a number153
+153 is an Armstrong Number
+Armstrong numbers between 1 to 1000 are:
+1	153	370	371	407	
+```
+## Write a function prodDigits () that inputs a number and returns the product of digits of that number.
+```
+#include <stdio.h>
+int prodDigits(int n);
+int main(){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+        printf("%d",prodDigits(number));
+        return 0;
+  }
+int prodDigits(int n){
+        int prod=1;
+        while(n>0){
+     int digit=n%10;
+      prod=prod*digit;
+      n=n/10;
+     }
+        return prod;
+}
+output
+Enter a number24
+8
+```
+##  If all digits of a number n are multiplied by each other repeating with the product, the one digit number obtained at last is
+called the multiplicative digital root of n. The number of times digits need to be multiplied to reach one digit is called the
+multiplicative persistence of n.
+```
+#include <stdio.h>
+int proDigits(int num){
+        int digit,rem=1;
+        while(num>0){
+        digit=num%10;
+        rem=rem*digit;
+        num/=10;
+        }
+        return rem;
+}
+int main(){
+        int number;
+        int step=0;
+        printf("Enter a number");
+        scanf("%d",&number);
+        int original=number;
+        while(number>=10){
+    number=proDigits(number);
+        step++;
+        }
+        printf("Multiplicative Digital root =%d\n",number);
+        printf("Multiplicative persistence =%d\n",step);
+        return 0;
+}
+output
+Enter a number25
+Multiplicative Digital root =0
+Multiplicative persistence =2
+```
+##A number is called perfect if the sum of proper divisors of that number is equal to the number. For example 28 is a
+perfect number, since 1+2+4+7+14 =28. Write a program to print all the perfect numbers in a given range.
+```
+#include <stdio.h>
+int perfect(int m,int n);
+int main(){
+int m,n;
+printf("Enter and m and n values:");
+scanf("%d%d",&m,&n);
+ perfect(m,n);
+}
+int perfect(int m,int n){
+printf("Perfect squares between these numbers are\n");
+        for(int i=m;i<=n;i++){
+                int sum=0;
+                for(int j=1;j<i;j++){
+                        if(i%j==0){
+                                sum+=j;
+                        }
+                }
+                  if(sum==i)
+                        printf("%d ",i);
+        }
+}
+
+
+output
+Enter and m and n values:1
+1000
+Perfect squares between these numbers are
+ 6 28 496
+```
+##
 
        
 
