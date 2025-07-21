@@ -141,13 +141,10 @@ int main(){
 int isprime(int n){
         int i;
         for(i=2;i<=sqrt(n);i++){
-                if (n%2==0){
+                if (n%i==0)
                  return 0;
-                }
-                else{
-                        return 1;
-                }
         }
+        return 1;
 }
 output
 Enter a number5
@@ -381,8 +378,67 @@ Enter a number and r 5
  permutation 60
  combination 10
 ```
-##
-
+## Program to convert decimal number to roman number
+```
+#include <stdio.h>
+int roman(int,int,char);
+int main(void){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+      if(number>=1000)
+              number=roman(number,1000,'M');
+      if(number>=500)
+              number=roman(number,500,'D');
+      if(number>=100)
+              number=roman(number,100,'C');
+      if(number>=50)
+              number=roman(number,50,'L');
+      if(number>=10)
+              number=roman(number,10,'X');
+      if(number>=5)
+       number=roman(number,5,'V');
+      if(number>=1)
+              roman(number,1,'I');
+      printf("\n");
+      return 0;
+}
+int roman(int n,int k,char ch){
+        while(n>=k){
+                printf("%c",ch);
+        n=n-k;
+        }
+        return n;
+}
+output
+Enter a number6
+VI
+```
+## Prime Factors of a given number
+```
+#include <stdio.h>
+int primefact(int);
+int main(){
+        int num;
+        printf("Enter a number");
+        scanf("%d",&num);
+        primefact(num);
+        return 0;
+}
+int primefact(int n){
+        int i=1;
+        for(int i=2;n!=1;i++){
+                while(n%i==0){
+                        printf("%d",i);
+                        n=n/i;
+                }
+        }
+}
+output
+Enter a number60
+2235
+```
+## 
 
        
 
