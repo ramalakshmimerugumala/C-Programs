@@ -629,7 +629,41 @@ Enter and m and n values:1
 Perfect squares between these numbers are
  6 28 496
 ```
-##
+## function to convert inches to cms  first srgument should be length should be connverted second argument should be char(i or c)denoting the measuremet unit of the length given in the first argumengt tell me how to do 
+```
+#include <stdio.h>
+float convert(float length,char unit){
+        if(unit=='i'|| unit=='I'){
+                return length*2.54;
+        }
+        else if(unit=='c'||unit=='C'){
+                return length/2.54;
+        }
+        else{
+                printf("Invalid unit.enter i or c");
+                return -1;
+        }
+}
+int main(){
+        float length,result;
+        char unit;
+        printf("Enter length:");
+      scanf("%f",&length);
+
+        printf("Enter unit");
+        scanf(" %c",&unit);
+
+        result=convert(length,unit);
+        if(result !=-1){
+        printf("%.2f",result);
+}
+return 0;
+}
+output
+Enter length:24
+Enter unit i
+60.96
+```
 
        
 
