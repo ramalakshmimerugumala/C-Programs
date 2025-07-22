@@ -842,7 +842,61 @@ output
 Enter a number1956
 Year is a leap year
 ```
+##  Write a function isValid() to find whether a date is vali
+```
+#include <stdio.h>
+int valid(int day,int month,int year);
+int leapyear(int year);
+int main(){
+        int day,month,year;
+        printf("Enter day,month,year");
+        scanf("%d%d%d",&day,&month,&year);
+        if(valid(day,month,year))
+                printf("Valid date");
+        else
+                printf("Invalid date");
+        return 0;
+}
+int leapyear(int year){
+        if((year%4&&year%100!=0)||(year%400==0))
+                return 1;
+        else
+            return 0;
+}
+int valid(int day,int month,int year){
+        if(year<1||day<1||month<1||month>12)
+                return 0;
+ int maxdays;
+ switch(month){
+         case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+                 maxdays=31;
+                 break;
+         case 4:case 6:case 9: case 11:
+                 maxdays=30;
+                 break;
+ case 2:
+                 if(leapyear(year))
+                         maxdays=29;
+                 else
+                         maxdays=28;
+                    break;
+                   default:
+                    return 0;
+ }
+if(day <=maxdays)
+        return 1;
+        else
+        return 0;
+        }
+
+output
+Enter day,month,year 67
+8
+56
+Invalid date
+```
 ## 
+
 
 
 
