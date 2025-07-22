@@ -500,9 +500,7 @@ output
 enter a number 152
 not an armstrong number
 ```
-## Write a function cubesum() that accepts an integer and returns the sum of the cubes of individual digits of that
-number. Use this function to make functions PrintArmstrong() and isArmstrong () to print Armstrong numbers
-and to find whether a number is an Armstrong number.
+## Write a function cubesum() that accepts an integer and returns the sum of the cubes of individual digits of thatnumber. Use this function to make functions PrintArmstrong() and isArmstrong () to print Armstrong numbersand to find whether a number is an Armstrong number.
 ```
 #include <stdio.h>
 int cubesum(int n);
