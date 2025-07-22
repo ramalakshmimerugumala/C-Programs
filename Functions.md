@@ -664,6 +664,160 @@ Enter length:24
 Enter unit i
 60.96
 ```
+##  Write a function to find whether a character is alphanumeric.
+```
+#include <stdio.h>
+int Alphanum(char ch);
+int main(){
+        char ch;
+ printf("Enter a character");
+ scanf("%c",&ch);
+        Alphanum(ch);
+ return 0;
+}
+int Alphanum(char ch){
+ if((ch>='A'&& ch<='Z')||(ch>='a'&& ch<='z')||
+    (ch>='0'&& ch<='9')){
+         printf("It is alphanueric");
+ }
+         else{
+          printf("Not alphanumeric");
+ }
+}
+output
+Enter a character%
+Not alphanumeric
+```
+## Write a function that accepts a character, if the character is a lower case alphabet its upper case equivalent is returnedotherwise the unchanged character is returned
+```
+#include <stdio.h>
+char upper(char ch);
+int main(){
+        char ch;
+        printf("Enter a character");
+        scanf("%c",&ch);
+        int c=upper(ch);
+        printf("converted to uppercase letter %c",c);
+        return 0;
+}
+char upper(char ch){
+        if(ch>='a'&& ch<='z'){
+                return ch-32;
+        }
+        else{
+         return ch;
+        }
+}
+output
+Enter a charactery
+converted to uppercase letter Y
+```
+## Write a function to find the sum of this series upto n terms.
+1+1/4+ 1/9 + 1/16 +.....
+```
+#include <stdio.h>
+double series(int n);
+int main(){
+        int num;
+ printf("Enter how many series");
+ scanf("%d",&num);
+ double s= series(num);
+ printf("%lf",s);
+ return 0;
+}
+double series(int n){
+        double sum=0.0;
+        for(int i=1;i<=n;i++){
+                printf("1/%d",i*i);
+                if(i!=n){
+                        printf("+");
+                }
+ sum+=1.0/(i*i);
+        }
+        printf("\n");
+        return sum;
+}
+ output
+  Enter how many series5
+1/1+1/4+1/9+1/16+1/25
+1.463611
+```
+## Write a program to print twin primes less than 1000. If two consecutive odd numbers are both prime (e.g. 17, 19) thenthey are known as twin primes.     
+```
+#include <stdio.h>
+#include <math.h>
+int isprime(int num){
+        for(int i=2;i*i<=num;i++){
+            if(num%i==0){
+                    return 0;
+            }
+            return 1;
+        }
+}
+int twinprimes(int limit){
+        for(int i=3;i<limit-2;i++){
+                if(isprime(i)&& isprime(i+2)){
+                        printf("%d and %d\n",i,i+2);
+                }
+        }
+}
+int main(){
+        twinprimes(100);
+}
+output
+3 and 5
+5 and 7
+7 and 9
+9 and 11
+11 and 13
+13 and 15
+15 and 17
+17 and 19
+19 and 21
+21 and 23
+23 and 25
+25 and 27
+27 and 29
+29 and 31
+31 and 33
+33 and 35
+35 and 37
+37 and 39
+39 and 41
+41 and 43
+43 and 45
+45 and 47
+47 and 49
+49 and 51
+51 and 53
+53 and 55
+55 and 57
+57 and 59
+59 and 61
+61 and 63
+63 and 65
+65 and 67
+67 and 69
+69 and 71
+71 and 73
+73 and 75
+75 and 77
+77 and 79
+79 and 81
+81 and 83
+83 and 85
+85 and 87
+87 and 89
+89 and 91
+91 and 93
+93 and 95
+95 and 97
+97 and 99
+```
+## 
+
+
+
 
        
 
