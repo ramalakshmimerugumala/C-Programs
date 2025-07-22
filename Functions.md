@@ -814,6 +814,34 @@ output
 95 and 97
 97 and 99
 ```
+## Write a function isLeap() which inputs a year and returns 1 if the year is leap otherwise 0.
+```
+#include <stdio.h>
+int leap(int num);
+int main(){
+        int number;
+        printf("Enter a number");
+        scanf("%d",&number);
+        if(leap(number)){
+                printf("Year is a leap year");
+        }
+        else{
+                printf("Year is not a leap year");
+        }
+}
+int leap(int year){
+        if((year %4==0&& year%100!=0)||(year%400==0)){
+                return 1;
+        }
+}
+        else{
+                return 0;
+        }
+}
+output
+Enter a number1956
+Year is a leap year
+```
 ## 
 
 
