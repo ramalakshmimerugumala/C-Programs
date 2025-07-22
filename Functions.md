@@ -569,9 +569,7 @@ output
 Enter a number24
 8
 ```
-##  If all digits of a number n are multiplied by each other repeating with the product, the one digit number obtained at last is
-called the multiplicative digital root of n. The number of times digits need to be multiplied to reach one digit is called the
-multiplicative persistence of n.
+##  If all digits of a number n are multiplied by each other repeating with the product, the one digit number obtained at last iscalled the multiplicative digital root of n. The number of times digits need to be multiplied to reach one digit is called themultiplicative persistence of n.
 ```
 #include <stdio.h>
 int proDigits(int num){
@@ -602,8 +600,7 @@ Enter a number25
 Multiplicative Digital root =0
 Multiplicative persistence =2
 ```
-##A number is called perfect if the sum of proper divisors of that number is equal to the number. For example 28 is a
-perfect number, since 1+2+4+7+14 =28. Write a program to print all the perfect numbers in a given range.
+## A number is called perfect if the sum of proper divisors of that number is equal to the number. For example 28 is aperfect number, since 1+2+4+7+14 =28. Write a program to print all the perfect numbers in a given range.
 ```
 #include <stdio.h>
 int perfect(int m,int n);
