@@ -895,6 +895,44 @@ Enter day,month,year 67
 56
 Invalid date
 ```
+## write a function cmpdate()
+```
+#include <stdio.h>
+int cmp(int d1,int m1,int y1,int d2,int m2,int y2){
+        if(y1<y2)
+                return 1;
+        if(y1>y2)
+                return -1;
+        if(m1<m2)
+                return 1;
+        if(m1>m2)
+                return -1;
+        if(d1<d2)
+                return 1;
+        if(d1>d2)
+                return -1;
+        return 0;
+        }
+        int main(){
+                int date1,month1,year1,date2,month2,year2;
+                printf("Enter date1, month1, year1");
+                scanf("%d%d%d",&date1,&month1,&year1);
+                printf("Enter date2,month2,year2");
+                scanf("%d%d%d",&date2,&month2,&year2);
+                int result=cmp(date1,month1,year1,date2,month2,year2);
+ if(result==1)
+                        printf("Date1 is before date2 1");
+                else if(result==-1)
+                        printf("Date2 is before date 1 -1");
+                else
+                        printf("Both dates are equal 0");
+        }
+
+output
+Enter date1, month1, year123 07 2025
+Enter date2,month2,year224 7 2025
+Date1 is before date2 1
+```
 ## 
 
 
