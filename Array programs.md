@@ -504,7 +504,7 @@ for(int i=0;i<7;i++){
         scanf("%d",&arr[i]);
 }
         int min=arr[0];
-        int second_min=arr[0];
+        int second_min=__INT_MAX__;
 for(int i=0;i<7;i++){
         if(arr[i]<min){
                 second_min=min;
@@ -514,8 +514,13 @@ for(int i=0;i<7;i++){
                 second_min=arr[i];
         }
 }
+if(second_min==__INT_MAX__){
+    printf("Second min doesnt exist");
 }
+else{
 printf("Second minimum number %d",second_min);
+}
+}
 Output
 Enter elements in the array:7
 2
