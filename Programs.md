@@ -228,7 +228,31 @@ Number of 5 rupees notes are requires 1
 Number of 2 rupess notes are required 1
 Number of 1 rupee notes are requires 1
 ```
+## Write a program to print all prime numbers from 1 to 99.
+```
+#include <stdio.h>
+int main(){
+        int n;
+        printf("Enter a number");
+        scanf("%d",&n);
+        for(int n=2;n<=99;n++){
+                int isprime=1;
+        for(int i=2;i*i<=n;i++){
+                if(n%i==0){
+                    isprime=0;
+                }
+        }
+         if(isprime){
+
+                        printf("%d ",n);
+        }
+}
+output
+Enter a number1
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+```
 ## 
+
                                               
 
 
