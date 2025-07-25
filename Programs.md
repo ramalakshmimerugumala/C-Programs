@@ -173,6 +173,62 @@ difference in days 2
 differences in months 0
 differences in years 3
 ```
-##                   
+##   Program to find out the number of notes required for a given amount of money*/ 
+```
+#include <stdio.h>
+int main(){
+        int n,choice,notes;
+        printf("Enter the amount");
+        scanf("%d",&n);
+        printf("Enter the value of notes which u begin from");
+        scanf("%d",&choice);
+        switch(choice){
+                case 100:
+                   notes=n/100;
+                printf("Number of 100 rupess notes required %d\n",notes);
+                n=n%100;
+               case 50:
+                notes=n/50;
+                printf("Number of 50 rupess notes are requires %d\n",notes);
+                n=n%50;
+               case 20:
+                notes=n/20;
+                printf("Number of 20 rupess notes are required %d\n",notes);
+                n=n%20;
+               case 10:
+                notes=n/10;
+                printf("Number of 10 rupess notes required %d\n",notes);
+                n=n%10;
+               case 5:
+                notes=n/5;
+                printf("Number of 5 rupees notes are requires %d\n",notes);
+                n=n%5;
+               case 2:
+                notes=n/2;
+                printf("Number of 2 rupess notes are required %d\n",notes);
+                n=n%2;
+           case 1:
+                notes=n/1;
+                printf("Number of 1 rupee notes are requires %d\n",notes);
+                n=n%1;
+                break;
+               default:
+                printf("Enter valid value");
+                break;
+        }
+        printf("\n");
+}
+output
+Enter the amount748
+Enter the value of notes which u begin from50
+Number of 50 rupess notes are requires 14
+Number of 20 rupess notes are required 2
+Number of 10 rupess notes required 0
+Number of 5 rupees notes are requires 1
+Number of 2 rupess notes are required 1
+Number of 1 rupee notes are requires 1
+```
+## 
+                                              
 
 
