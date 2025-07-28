@@ -1526,4 +1526,6 @@ Enter the elements in the array1
 5
 Highest adjacent side element 9
 ```
-## 38
+## 38 Write a procedure which finds the smallest element of the array and swaps it with the 0th element of the array.
+```
+
