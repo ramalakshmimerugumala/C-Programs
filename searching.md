@@ -41,4 +41,62 @@ Enter the elements in the array1
 Enter the element to search5
 Element 5 is found  at index 4
 ```
+## Binary search
+```
+#include <stdio.h>
+int binarysearch(int n,int arr[],int item);
+int main(){
+    int n;
+    int arr[100];
+    int item;
+    printf("Enter the size of an array");
+    scanf("%d",&n);
+    printf("Enter the elements in the array");
+    for(int i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+    printf("Enter the element to search");
+    scanf("%d",&item);
+    int index=binarysearch(n,arr,item);
+     if(index!=-1){
+         printf("element %d Found at index at %d\n",item,index);
+     }
+     else{
+         printf("Element is not found");
+     }
+     return 0;
+    }
+int binarysearch(int n,int arr[],int item){
+    int i=0;
+    int low,up,mid;
+    low=0;
+    up=n-1;
+    while(low<=up){
+        mid=(low+up)/2;
+        if(item>arr[mid]){
+        low=mid+1;
+        }
+        else if(item<arr[mid]){
+        up=mid-1;
+        }
+        else{
+        return mid;
+        }
+}
+return -1;
+}
+output
+Enter the size of an array10
+Enter the elements in the array1
+2
+3
+4
+5
+7
+8
+90
+91
+97
+Enter the element to search4
+element 4 Found at index at 3
+```
 ## 
