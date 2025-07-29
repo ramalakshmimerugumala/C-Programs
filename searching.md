@@ -139,5 +139,41 @@ Enter the elements in the array:12
 23
 Sorted list2 12 23 34 56 89 7823
 ```
+## Bubble sort
+```
+#include <stdio.h>
+int main(){
+int n;
+int arr[100];
+printf("Enter the size of an array:");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+int min=arr[0];
+int temp;
+for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                      temp=arr[j];
+                     arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                }
+        }
+}
+for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+}
+}
+output
+Enter the size of an array:5
+Enter the elements in the array45
+23
+90
+12
+6
+6 12 23 45 90
+```
 ## 
 
