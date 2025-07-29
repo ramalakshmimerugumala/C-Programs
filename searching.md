@@ -99,4 +99,45 @@ Enter the elements in the array1
 Enter the element to search4
 element 4 Found at index at 3
 ```
+##  Selection sort
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int  n,temp,i,j,min;
+printf("Enter the size of an array");
+scanf("%d",&n);
+printf("Enter the elements in the array:");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+
+for(i=0;i<n-1;i++){
+        min=i;
+ for(j=i+1;j<n;j++){
+         if(arr[min]>arr[j])
+             min=j;
+         }
+if(i!=min){
+         temp=arr[i];
+        arr[i]=arr[min];
+        arr[min]=temp;
+}
+}
+printf("Sorted list");
+for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+}
+output
+Enter the size of an array7
+Enter the elements in the array:12
+34
+2
+56
+89
+7823
+23
+Sorted list2 12 23 34 56 89 7823
+```
 ## 
+
