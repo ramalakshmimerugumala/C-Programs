@@ -1528,4 +1528,36 @@ Highest adjacent side element 9
 ```
 ## 38 Write a procedure which finds the smallest element of the array and swaps it with the 0th element of the array.
 ```
-
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+int minIndex=0;
+printf("Enter the size of an array");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+int min=arr[0];
+for(int i=0;i<n;i++){
+        if(arr[i]<min){
+                min=arr[i];
+                minIndex=i;
+        }
+}
+printf("Minimum element in the array is %d\n",min);
+  int temp=arr[0];
+  arr[0]=arr[minIndex];
+  arr[minIndex]=temp;
+  printf("After swapping");
+  for(int i=0;i<n;i++){
+          printf("%d",arr[i]);
+  }
+}
+output
+Enter the size of an array5
+Enter the elements in the array23 12 45 3 67 
+Minimum element in the array is 3
+After swapping3 12 45 23 67
+```
