@@ -1635,4 +1635,43 @@ Enter the elements in the array1 4 1 7 5
 Enter the elements in the array 23 5 9 1
 Merging of two arrays in sorting order1 1 3 4 5 5 7 9
 ```
-## 
+## Magic matrix
+```
+#include <stdio.h>
+int main(){
+int arr[100][100]={0};
+int i,j,num;
+int n;
+printf("Enter the size of an array");
+scanf("%d",&n);
+if(n<=0||n%2==0||n>100)
+        return 0;
+i=n-1;
+j=(n-1)/2;
+for(num=1;num<=n*n;num++){
+        arr[i][j]=num;
+if(num%n==0){
+i=(i-1+n)%n;
+}
+else{
+i=(i+1)%n;
+j=(j-1+n)%n;
+}
+}
+for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+printf("3%d ",arr[i][j]);
+        }
+        printf("\n");
+}
+return 0;
+}
+output
+Enter the size of an array3 3
+  2   9   4 
+  7   5   3 
+  6   1   8
+```
+
+
+
