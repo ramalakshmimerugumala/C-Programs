@@ -278,6 +278,33 @@ Enter a number23112
 Enter a digit1
 Count of the number 2
 ```
+## Pascal triangle
+```
+#include <stdio.h>
+int main(){
+int n;
+printf("Enter the size");
+scanf("%d",&n);
+for(int i=0;i<n;i++){
+        int val=1;
+        for(int j=0;j<=i;j++){
+                printf("%d",val);
+                val=val*(i-j)/(j+1);
+        }
+        printf("\n");
+}
+return 0;
+}
+output
+1
+11
+121
+1331
+14641
+15101051
+1615201561
+```
+## 
 
                                               
 
