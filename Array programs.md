@@ -1561,3 +1561,78 @@ Enter the elements in the array23 12 45 3 67
 Minimum element in the array is 3
 After swapping3 12 45 23 67
 ```
+## Delete the element at specific position
+```
+#include <stdio.h>
+int main(){
+int n;
+int arr[100];
+printf("Enter the size of an array");
+scanf("%d",&n);
+printf("Enter the elements in the array:");
+for(int i=0;i<n;i++){
+   scanf("%d",&arr[i]);
+}
+int position;
+printf("Enter the position to delete");
+scanf("%d",&position);
+for(int i=position;i<n-1;i++){
+         arr[i]=arr[i+1];
+ }
+n--;
+for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+}
+}
+output
+Enter the elements in the array:12 23 24 56 34 
+Enter the position to delete4
+12 23 24 56
+```
+##  Program of merging two sorted arrays into a third sorted array
+```
+#include <stdio.h>
+int main(){
+int arr1[100];
+int arr2[100];
+int arr3[200];
+int n,m;
+printf("Enter the size of n and m");
+scanf("%d%d",&m,&n);
+printf("Enter the elements in the array1");
+for(int i=0;i<m;i++){
+        scanf("%d",&arr1[i]);
+}
+printf("Enter the elements in the array 2");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr2[i]);
+}
+for(int i=0;i<m;i++){
+arr3[i]=arr1[i];
+}
+for(int i=0;i<n;i++){
+        arr3[m+i]=arr2[i];
+}
+int temp;
+printf("Merging of two arrays in sorting order");
+for(int i=0;i<m+n;i++){
+        for(int j=i+1;j<m+n;j++){
+                if(arr3[i]>arr3[j]){
+                        temp=arr3[i];
+                        arr3[i]=arr3[j];
+                        arr3[j]=temp;
+                }
+        }
+
+}
+for(int i=0;i<m+n;i++){
+        printf("%d ",arr3[i]);
+}
+}
+output
+Enter the size of n and m4 4
+Enter the elements in the array1 4 1 7 5
+Enter the elements in the array 23 5 9 1
+Merging of two arrays in sorting order1 1 3 4 5 5 7 9
+```
+## 
