@@ -1672,6 +1672,39 @@ Enter the size of an array3 3
   7   5   3 
   6   1   8
 ```
+## . Write a program to modify the elements of an array such that the first element becomes the last element of the array andall other elements are shifted towards left.
+123456789→ 234567891
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+printf("Enter the size of an array:");
+scanf("%d",&n);
+printf("Enter the elements in the array:");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+if(n>1){
+int temp=arr[0];
+for(int i=0;i<n;i++){
+        arr[i]=arr[i+1];
+}
+}
+        arr[n-1]=temp;
+}
+for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+}
+}
+output
+Enter the size of an array:9
+Enter the elements in the array:1 2 3 4 5 6 7 8 9
+2 3 4 5 6 7 8 9 1
+```
+## 
+
+
 
 
 
