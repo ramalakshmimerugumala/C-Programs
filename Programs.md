@@ -251,7 +251,33 @@ output
 Enter a number1
 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
 ```
-## 
+## Count the frequency of the digit using while loop
+```
+#include <stdio.h>
+int main(){
+int n;
+int rem=0;
+int digit;
+int count=0;
+printf("Enter a number");
+scanf("%d",&n);
+printf("Enter a digit");
+scanf("%d",&digit);
+while(n>0){
+        int di=n%10;
+        if(di==digit){
+        count ++;
+        }
+        n=n/10;
+}
+printf("Count of the number %d",count);
+}
+
+output
+Enter a number23112
+Enter a digit1
+Count of the number 2
+```
 
                                               
 
