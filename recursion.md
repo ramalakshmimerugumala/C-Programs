@@ -46,4 +46,30 @@ output
 Enter how many terms u want10
 0 1 1 2 3 5 8 13 21 34 
 ```
-## 
+##  Reverse of an array using recursion
+```
+#include <stdio.h>
+int reverse(int arr[],int n);
+int main(){
+int n;
+int arr[100];
+printf("Enter the size of an array");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+printf("Reversed array");
+reverse(arr,n-1);
+}
+int reverse(int arr[],int n){
+        if(n<0)
+                return;
+        printf("%d ",arr[n]);
+        reverse(arr,n-1);
+}
+output
+Enter the size of an array5
+Enter the elements in the array1 2 3 4 5
+Reversed array5 4 3 2 1
+```
