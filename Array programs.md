@@ -1702,7 +1702,41 @@ Enter the size of an array:9
 Enter the elements in the array:1 2 3 4 5 6 7 8 9
 2 3 4 5 6 7 8 9 1
 ```
+##  Rotate by 3 elements
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+int k=3;
+int j=0;
+int temp[k];
+printf("Enter the size of the array");
+scanf("%d",&n);
+printf("enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<k;i++){
+        temp[i]=arr[i];
+}
+for(int i=0;i<n;i++){
+ arr[i]=arr[i+k];
+}
+for(int i=n-k;i<n;i++){
+        arr[i]=temp[j++];
+}
+for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+}
+}
+output
+Enter the size of an array6
+Enter the elements in the array1 2 3 4 5 6 
+4 5 6 1 2 3
+```
 ## 
+
 
 
 
