@@ -1735,8 +1735,45 @@ Enter the size of an array6
 Enter the elements in the array1 2 3 4 5 6 
 4 5 6 1 2 3
 ```
-## 
-
+## shifting odd elements to left and even elements to right
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+int even[100];
+int odd[100];
+int evenindex=0;
+int oddindex=0;
+printf("Enter the size of an array");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+  scanf("%d",&arr[i]);
+}
+for(int i=0;i<n;i++){
+  if(arr[i]%2!=0){
+          odd[oddindex++]=arr[i];
+}
+else{
+        even[evenindex++]=arr[i];
+}
+}
+int k=0;
+for(int i=0;i<oddindex;i++)
+ arr[k++]=odd[i];
+for(int i=0;i<evenindex;i++)
+arr[k++]=even[i];
+printf("After shifting");
+for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+}
+}
+output
+Enter the size of an array5 
+Enter the elements in the array1 2 3 4 5
+After shifting1 3 5 2 4
+```
 
 
 
