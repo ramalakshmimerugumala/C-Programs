@@ -21,3 +21,5 @@ Enter a stringhello
 Enter a string2ll
 String found
 ```
+## Extract a substring from a string from the start index and end index
+```
