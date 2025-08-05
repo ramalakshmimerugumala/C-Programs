@@ -90,4 +90,133 @@ Values using array pointer 7	Address using Array pointer 0x7ffc13ab3f58
 Values using array pointer 3	Address using Array pointer 0x7ffc13ab3f5c
 Values using array pointer 2	Address using Array pointer 0x7ffc13ab3f60
 ```
+##  call by value
+```
+#include <stdio.h>
+int callbyvalue(int x,int y);
+int main(){
+        int m,n;
+        printf("Enter a number");
+        scanf("%d",&m);
+        printf("Enter a number2");
+        scanf("%d",&n);
+        callbyvalue(m,n);
+        printf("%d%d\n",m,n);
+}
+int callbyvalue(int x,int y){
+        x=6;
+        y=7;
+        x++;
+        y++;
+        printf("%d%d\n",x,y);
+}
+output
+Enter a number14
+Enter a number21
+x=7 y=8
+m=4 n=1
+
+```
+## call by reference
+```
+#include <stdio.h>
+int callref(int *x,int *y);
+int main(){
+int a=5,b=8;
+printf("a=%d,b=%d\n",a,b);
+callref(&a,&b);
+printf("a=%d,b=%d\n",a,b);
+return 0;
+}
+int callref(int *x,int *y){
+        (*x)++;
+        (*y)++;
+        printf("*p=%d,*q=%d\n",*x,*y);
+}
+output
+a=5,b=8
+*p=6,*q=9
+a=6,b=9
+```
+##  Returning more than one value from a function using call by reference*
+```
+#include <stdio.h>
+int *ret(int a,int b,int *sum,int *prod,int *diff);
+int main(){
+int a,b;
+int sum,prod,diff;
+printf("Enter a number");
+scanf("%d",&a);
+printf("Enter a number");
+scanf("%d",&b);
+int *ptr;
+ret(a,b,&sum,&prod,&diff);
+printf("sum=%d prod=%d diff=%d",sum,prod,diff);
+
+}
+int *ret(int a,int b,int *sum,int *prod,int *diff){
+        *sum=a+b;
+        *prod=a*b;
+        *diff=a-b;
+}
+output
+Enter a number5
+Enter a number2
+sum=7 prod=10 diff=3
+```
+##  Implement a function that returns the length of a string using pointers
+```
+#include <stdio.h>
+int lenstr(char *str);
+int main(){
+ char str[100];
+ printf("Enter a string");
+ scanf("%s",str);
+ int length=lenstr(str);
+ printf("Length of a string=%d\n",length);
+}
+int lenstr(char *str){
+        int count=0;
+        while(*str!='\0'){
+                count++;
+                str++;
+        }
+        return count;
+}
+output
+Enter a stringmoon
+Length of a string=4
+```
+## Develop a function to reverse a string in place using pointers
+```
+#include <stdio.h>
+char rev(char *str);
+int main(){
+char str[100];
+printf("Enter a string");
+scanf("%s",str);
+rev(str);
+printf("%s",str);
+}
+char rev(char *str){
+        char *start=str;
+        char *end=str;
+        while(*end!='\0'){
+                end++;
+        }
+        end--;
+        while(start<end){
+                char temp=*start;
+                *start=*end;
+                *end=temp;
+                start++;
+                end--;
+        }
+}
+output
+Enter a string Rama
+amaR
+```
 ## 
+
+
