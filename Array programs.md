@@ -1774,7 +1774,62 @@ Enter the size of an array5
 Enter the elements in the array1 2 3 4 5
 After shifting1 3 5 2 4
 ```
+## Max Rowsum And Max Colsum
+```
+#include <stdio.h>
+int main(){
+int m,n;
+int sumrow=0;
+int sumcol=0;
+int arr[100][100];
+int max=0;
+int colmax=0;
+printf("Enter the size of row and column");
+scanf("%d%d",&m,&n);
+printf("Enter the elements in the array");
+for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+for(int i=0;i<m;i++){
+ for(int j=0;j<n;j++){
+                printf("%d",arr[i][j]);
+        }
+        printf("\n");
+}
+for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+                 sumrow+=arr[i][j];
+        }
+        if(sumrow>max){
+                max=sumrow;
+        }
+  sumrow=0;
+}
+printf("Max =%d",max);
+for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+                sumcol+=arr[j][i];
+        }
+        if(sumcol>colmax){
+                colmax=sumcol;
+        }
+        sumcol=0;
+}
+printf("maxcol=%d",colmax);
+}
+output
+Enter the size of row and column3 3
+Enter the elements in the array1 2 3 4 5 6 7 8 9
+123
+456
+789
+Max =24 maxcol=18
+```
 
+
+                        
 
 
 
