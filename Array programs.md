@@ -1827,6 +1827,35 @@ Enter the elements in the array1 2 3 4 5 6 7 8 9
 789
 Max =24 maxcol=18
 ```
+## Reverse of an array
+```
+#include <stdio.h>
+int main(){
+int arr[100];
+int n;
+int j;
+printf("Enter the size of array:");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0,j=n-1;i<j;i++,j--){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+}
+for(int i=0;i<n;i++){
+        printf("%d",arr[i]);
+}
+}
+output
+Enter the size of array:5
+Enter the elements in the array1 2 3 4 5
+54321
+```
+
+
 
 
 
