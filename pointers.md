@@ -241,6 +241,67 @@ output
 Enter a stringhello
 Copied to string 2 hello
 ```
+## Write a program that calculates the sum of all elements in an integer array using pointer arithmetic
+```
+#include <stdio.h>
+int main(){
+int sum=0;
+int arr[5]={1,2,3,4,5};
+int *ptr=arr;
+for(int i=0;i<5;i++){
+        printf("%d",*(ptr+i));
+        sum=sum+*(ptr+i);
+}
+printf("\n Sum of elements in the array=%d",sum);
+}
+output
+12345
+Sum of elements in the array=15
+```
+## Create a function that swaps two numbers using pointers
+```
+#include <stdio.h>
+int swap(int *x,int *y);
+int main(){
+int x=10;
+int y=5;
+swap(&x,&y);
+printf("x=%d\n",x);
+printf("y=%d\n",y);
+}
+int swap(int *x,int *y){
+int temp=*x;
+    *x=*y;
+    *y=temp;
+}
+output
+x=5
+y=10
+```
+## . Write a program to find the maximum and minimum elements in an array using pointers
+```
+#include <stdio.h>
+int main(){
+int arr[5]={2,4,6,7,9};
+int max=arr[0];
+int min=arr[0];
+int (*ptr)[5];
+ptr=&arr;
+for(int i=0;i<5;i++){
+        if((*ptr)[i]>max){
+                max=(*ptr)[i];
+        }
+        else if((*ptr)[i]<min){
+                min=(*ptr)[i];
+        }
+}
+printf("Maximum elemnt=%d",max);
+printf("Minimum element=%d",min);
+}
+output
+Maximum elemnt=9Minimum element=2
+```
+## 
 
 
 
