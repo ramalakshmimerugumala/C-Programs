@@ -217,6 +217,31 @@ output
 Enter a string Rama
 amaR
 ```
-## 
+##  Implement a function to copy one string into another using pointers, without using any standard library functions
+```
+#include <stdio.h>
+char copy(char *str1,char *str2);
+int main(){
+char str1[100];
+char str2[100];
+printf("Enter a string");
+scanf("%s",str1);
+copy(str1,str2);
+printf("Copied to string 2 %s",str2);
+}
+char copy(char *str1,char *str2){
+        while(*str1!='\0'){
+                *str2=*str1;
+                str1++;
+                str2++;
+        }
+        *str2!='\0';
+}
+output
+Enter a stringhello
+Copied to string 2 hello
+```
+
+
 
 
