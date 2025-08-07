@@ -301,7 +301,53 @@ printf("Minimum element=%d",min);
 output
 Maximum elemnt=9Minimum element=2
 ```
-## 
+## Write a program to find the factorial of a given number using pointers
+```
+#include <stdio.h>
+int main(){
+int n;
+printf("Enter a number");
+scanf("%d",&n);
+int fact=1;
+int *ptr;
+ptr=&fact;
+for(int i=1;i<=n;i++){
+        *ptr=*ptr*i;
+}
+printf("Factorial of a number is %d",*ptr);
+}
+output
+Enter a number4
+Factorial of a number is 24
+```
+## Write a program to count the number of vowels and consonants in a string using a pointer
+```
+#include <stdio.h>
+int main(){
+char str[100];
+int vowel=0;
+int consonant=0;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+char *ptr;
+ptr=str;
+while(*ptr!='\0'){
+        if((*ptr=='A'||*ptr=='E'||*ptr=='I'||*ptr=='O'||*ptr=='U')||(*ptr=='a'||*ptr=='e'||*ptr=='i'||*ptr=='o'||*ptr=='u')){
+          vowel++;
+        }
+        else if((*ptr>='a'&&*ptr<='z')||(*ptr>='A' && *ptr<='Z')){
+                consonant++;
+        }
+          ptr++;
+}
+printf("vowel count=%d",vowel);
+printf("Consonant count=%d",consonant);
+}
+output
+ Enter a stringrama
+vowel count=2Consonant count=2
+```
+                
 
 
 
