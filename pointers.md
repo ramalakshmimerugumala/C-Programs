@@ -347,7 +347,62 @@ output
  Enter a stringrama
 vowel count=2Consonant count=2
 ```
-                
+## Write a program to demonstrate how a function returns a pointer.
+```
+#include <stdio.h>
+int prod(int x,int y,int *prod);
+int main(){
+int m,n;
+printf("Enter a number1");
+scanf("%d",&m);
+printf("Enter number 2");
+scanf("%d",&n);
+int result;
+prod(m,n,&result);
+printf("%d",result);
+}
+int prod(int x,int y,int *prod){
+        *prod=x*y;
+}
+output
+Enter a number15
+Enter number 23
+15
+```
+## Write a program to find the largest element using Dynamic Memory Allocation.
+```
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+int n;
+printf("Enter the number of elements:");
+scanf("%d",&n);
+int *ptr;
+ptr=(int *)malloc(n*sizeof(int));
+if(ptr==NULL){
+        printf("Memory is not allocated");
+}
+printf("Enter elements");
+for(int i=0;i<n;i++){
+        scanf("%d",(ptr+i));
+}
+int max=ptr[0];
+for(int i=1;i<n;i++){
+if(ptr[i]>max){
+                max=ptr[i];
+}
+}
+printf("Largest element is =%d\n",max);
+free(ptr);
+}
+output
+Enter the number of elements:5
+Enter elements1 2 3 4 5
+Largest element is =5
+```
+
+
+
 
 
 
