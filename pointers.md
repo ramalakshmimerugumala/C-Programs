@@ -426,7 +426,86 @@ output
 Enter search element9
 Element is not found
 ```
-## str
+## Write a program to multiply two matrix using pointers
+```
+#include <stdio.h>
+int main(){
+int n,m;
+int arr1[100][100];
+int arr2[100][100];
+int result[100][100]={0};
+printf("Enter the size of rows and coulmns of 1st matrix");
+scanf("%d %d",&n,&m);
+printf("Enter the elments in the matrix1");
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++){
+scanf("%d",(*(arr1+i)+j));
+ }
+}
+int p,q;
+printf("Enter the size of rows and columns in the array 2");
+scanf("%d %d",&p,&q);
+printf("Enter the elements in the array2");
+for(int i=0;i<p;i++){
+for(int j=0;j<q;j++){
+scanf("%d",(*(arr2+i)+j));
+ }
+}
+printf("Matrix multiplication\n");
+for(int i=0;i<n;i++){
+        for(int j=0;j<q;j++){
+                for(int k=0;k<m;k++){
+                        *(*(result+i)+j)+=*(*(arr1+i)+k)* *(*(arr2+k)+j);
+                }
+        }
+}
+for(int i=0;i<n;i++){
+  for(int j=0;j<m;j++){
+                printf("%d ",*(*(result+i)+j));
+        }
+        printf("\n");
+}
+}
+output
+Enter the size of rows and coulmns of 1st matrix3 3 
+Enter the elments in the matrix11 2 3 4 5  6 7 8 9
+Enter the size of rows and columns in the array 23 3
+Enter the elements in the array21 2 3 4 5 6 7 8 9 
+Matrix multiplication
+30 36 42 
+66 81 96 
+102 126 150
+```
+## write a program to concatenate two strings using pointers
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str1[100];
+char str2[100];
+printf("Enter string 1");
+fgets(str1,sizeof(str1),stdin);
+str1[strcspn(str1,"\n")]='\0';
+printf("Enter string 2");
+fgets(str2,sizeof(str2),stdin);
+str2[strcspn(str2,"\n")]='\0';
+char *ptr=str1;
+char *ptr2=str2;
+while(*ptr!='\0'){
+        ptr++;
+}
+while((*ptr++=*ptr2++)){
+}
+printf("%s",str1);
+}
+output
+Enter string 1hello
+Enter string 2world
+helloworld
+```
+
+
+
 
 
 
