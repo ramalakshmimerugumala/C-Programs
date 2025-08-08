@@ -503,6 +503,131 @@ Enter string 1hello
 Enter string 2world
 helloworld
 ```
+## Program to access dynamically allocated memory as a 1d array
+```
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+int n;
+printf("Enter the size");
+scanf("%d",&n);
+int (*ptr)[n];
+ptr=malloc(sizeof(*ptr));
+if(ptr==NULL){
+        printf("Memory is not allocated");
+}
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+ scanf("%d",&(*ptr)[i]);
+}
+for(int i=0;i<n;i++){
+ printf("%d ",(*ptr)[i]);
+}
+free(ptr);
+}
+output
+Enter the size5
+Enter the elements in the array1 2 3 4 5
+1 2 3 4 5
+```
+## Program to access dynamically allocate a 2-D array using a pointer to an array
+```
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+int n,m;
+printf("Enter the size of row");
+scanf("%d",&n);
+printf("Enter the size of the column");
+scanf("%d",&m);
+int (*ptr)[m];
+ptr=malloc(n*sizeof(*ptr));
+if(ptr==NULL){
+        printf("Memory is not allocated");
+}
+printf("Enter the elements in the matrix");
+for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+                scanf("%d",&ptr[i][j]);
+ }
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+                printf("%d",ptr[i][j]);
+        }
+        printf("\n");
+}
+free(ptr);
+}
+output
+Enter the size of row3
+Enter the size of the column4
+Enter the elements in the matrix1 2 3 4 5 6 7 8 9 2 3 4
+1234
+5678
+9234
+```
+## Write a program to print array of pointer
+```
+Using subscript and pointer
+#include <stdio.h>
+int main(){
+int arr[5]={1,2,3,4,5};
+int (*ptr)[5];
+ptr=&arr;
+for(int i=0;i<5;i++){
+  printf("value= %d\t",(*ptr)[i]);
+  printf("Address= %p\n",&(*ptr)[i]);
+  printf("values=%d\t",*(*ptr+i));
+  printf("Address=%p\n",(*ptr+i));
+}
+}
+output
+value= 1	Address= 0x7ffc5da53640
+values=1	Address=0x7ffc5da53640
+value= 2	Address= 0x7ffc5da53644
+values=2	Address=0x7ffc5da53644
+value= 3	Address= 0x7ffc5da53648
+values=3	Address=0x7ffc5da53648
+value= 4	Address= 0x7ffc5da5364c
+values=4	Address=0x7ffc5da5364c
+value= 5	Address= 0x7ffc5da53650
+values=5	Address=0x7ffc5da53650
+
+2d array
+#include <stdio.h>
+int main(){
+int arr[2][3]={{1,2,3},
+            {4,5,6}};
+int (*ptr)[3];
+ptr=arr;
+for(int i=0;i<2;i++){
+        for(int j=0;j<3;j++){
+                printf("Value=%d\t",ptr[i][j]);
+                printf("Address=%p\n",&ptr[i][j]);
+                printf("values=%d\t",*(*(ptr+i)+j));
+                printf("Address=%p\n",(*(ptr+i)+j));
+        }
+}
+}
+Value=1	Address=0x7fff1e5c64e0
+values=1	Address=0x7fff1e5c64e0
+Value=2	Address=0x7fff1e5c64e4
+values=2	Address=0x7fff1e5c64e4
+Value=3	Address=0x7fff1e5c64e8
+values=3	Address=0x7fff1e5c64e8
+Value=4	Address=0x7fff1e5c64ec
+values=4	Address=0x7fff1e5c64ec
+Value=5	Address=0x7fff1e5c64f0
+values=5	Address=0x7fff1e5c64f0
+Value=6	Address=0x7fff1e5c64f4
+values=6	Address=0x7fff1e5c64f4
+
+
+
+
+
+
 
 
 
