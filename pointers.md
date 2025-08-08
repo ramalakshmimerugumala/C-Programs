@@ -400,7 +400,33 @@ Enter the number of elements:5
 Enter elements1 2 3 4 5
 Largest element is =5
 ```
-
+## Logic to search an element in an array using pointers
+```
+#include <stdio.h>
+int main(){
+int arr[5]={1,2,3,4,5};
+int *ptr;
+ptr=arr;
+int search;
+int found=0;
+printf("Enter search element");
+scanf("%d",&search);
+for(int i=0;i<5;i++){
+if((*ptr+i)==search){
+        printf("Search element is found");
+        found=1;
+        break;
+}
+}
+if(found==0){
+printf("Element is not found");
+}
+}
+output
+Enter search element9
+Element is not found
+```
+## str
 
 
 
