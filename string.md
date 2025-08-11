@@ -247,7 +247,55 @@ Alphabet count =4
 Digits count=4
 Special character count=1
 ```
-## 
+## . Write a program in C to copy one string to another string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+char str2[100];
+int i=0;
+while(str[i]!='\0'){
+        str2[i]=str[i];
+         i++;
+}
+str2[i]='\0';
+printf("Copied string=%s",str2);
+}
+output
+Enter a stringhenry
+Copied string=henry
+```
+## Write a program in C to count the total number of vowels or consonants in a string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+int vowelcount=0;
+int consonant=0;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+for(int i=0;str[i]!='\0';i++){
+        if((str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U')||(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')){
+                vowelcount ++;
+        }
+        else if((str[i]>='A'&& str[i]<='Z')||(str[i]>='a'&& str[i]<='z')){
+         consonant++;
+        }
+}
+printf("Vowelcount=%d",vowelcount);
+printf("Consonant count=%d",consonant);
+}
+output
+Enter a stringramalakshmi
+Vowelcount=4Consonant count=7
+```
+
+
+
+
+
 
 
 
