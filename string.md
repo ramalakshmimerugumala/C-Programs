@@ -78,5 +78,107 @@ output
 Enter a stringrama
 ram
 ```
+## . Write a program in C to find the length of a string without using library functions
+```
+#include <stdio.h>
+int main(){
+char str[100];
+printf("Enter a string");
+//scanf("%s",str);
+fgets(str,sizeof(str),stdin);
+int count=0;
+int i=0;
+while(str[i]!='\0'){
+        if(str[i]=='\n'){
+                break;
+        }
+        count++;
+        i++;
+}
+printf("Length of a string =%d",count);
+}
+output
+Enter a stringubuntu
+Length of a string =6
+```
+## Write a program in C to separate individual characters from a string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+int i=0;
+printf("Individual character are:");
+while(str[i]!='\0'){
+        if(str[i]=='\n'){
+                break;
+        }
+        printf("%c \n",str[i]);
+        i++;
+        }
+        }
+output
+Enter a stringrama
+Individual character are:r 
+a 
+m 
+a 
+```
+## Write a program in C to print individual characters of a string in reverse order
+```
+#include <stdio.h>
+int main(){
+char str[100];
+int len=0;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+int i=0;
+while(str[len]!='\0'){
+        if(str[len]=='\n'){
+                break;
+        }
+        len++;
+}
+printf("Individual characters in a reverse order");
+for(i=len-1;i>=0;i--){
+        printf("%c\n",str[i]);
+}
+}
+output
+Enter a stringrama
+Individual characters in a reverse ordera
+m
+a
+r
+```
+## . Write a program in C to count the total number of words in a string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+int i=0;
+int wordcount=0;
+while(str[i]!='\0'){
+        if((str[i]!=' '&& str[i]!='\n')&&
+           (str[i+1]==' '|| str[i+1]=='\n'||str[i]=='\0')){
+           wordcount ++;
+        }
+        i++;
+}
+printf("Number of words in a given string is =%d",wordcount);
+}
+output
+Enter a stringhello world
+Number of words in a given string is =2
+```
 ## 
+
+
+
+
+
+
 
