@@ -174,6 +174,79 @@ output
 Enter a stringhello world
 Number of words in a given string is =2
 ```
+## Write a program in C to compare two strings without using string library functions.
+```
+#include <stdio.h>
+int main(){
+char str[100];
+char str2[100];
+int flag=0;
+printf("Enter a string1");
+fgets(str,sizeof(str),stdin);
+printf("Enter a string2");
+fgets(str2,sizeof(str2),stdin);
+int i=0;
+while(str[i]!='\0' && str2[i]!='\0'){
+        if(str[i]=='\n'||str2[i]=='\n'){
+                break;
+        }
+        if(str[i]!=str2[i]){
+                flag=1;
+                break;
+}
+        i++;
+}
+if((str[i]!='\n'&&str[i]!='\0')||(str2[i]!='\n'&&str2[i]!='\0')){
+        flag=1;
+}
+if(flag==0){
+        printf("Strings are equal");
+}
+else{
+        printf("Strings are not equal");
+}
+}
+output
+Enter a string1ram
+Enter a string2rama
+Strings are not equal
+```
+##  Write a program in C to count the total number of alphabets, digits and special characters in a string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+printf("Enter a string:");
+fgets(str,sizeof(str),stdin);
+int i=0;
+int alpha=0;
+int digits=0;
+int count =0;
+while(str[i]!='\0'){
+        if(str[i]=='\n'){
+                break;
+        }
+   if((str[i]>='A'&&str[i]<='Z')||(str[i]>='a'&& str[i]<='z')){
+    alpha++;
+   }
+   else if(str[i]>='0'&&str[i]<='9'){
+   digits++;
+   }
+   else{
+           count++;
+   }
+   i++;
+}
+printf("Alphabet count =%d\n",alpha);
+printf("Digits count=%d\n",digits);
+printf("Special character count=%d\n",count);
+}
+output
+Enter a string:rama@1456
+Alphabet count =4
+Digits count=4
+Special character count=1
+```
 ## 
 
 
