@@ -1,4 +1,4 @@
-## substring
+## substring found
 ```
 #include <stdio.h>
 #include <string.h>
@@ -291,8 +291,116 @@ output
 Enter a stringramalakshmi
 Vowelcount=4Consonant count=7
 ```
+## . Write a program in C to find the maximum number of characters in a string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+int len=0;
+int i=0;
+while(str[i]!='\0'){
+        if(str[i]=='\n'){
+                break;
+        }
+        len++;
+        i++;
+}
+printf("max characters in a string=%d",len);
+}
+output
+Enter a stringrama
+max characters in a string=4
+```
+## Another method
+```
+#include <string.h>
+int main(){
+int n;
+int maxlen=0;
+char str[100];
+char longest[100];
+printf("Enter number of strings");
+scanf("%d",&n);
+getchar();//removes the /n
+for(int i=0;i<n;i++){
+        printf("Enter a string\n");
+        fgets(str,sizeof(str),stdin);
+        str[strcspn(str,"\n")]='\0';
+        int len=strlen(str);
+        if(len>maxlen){
+                maxlen=len;
+                strcpy(longest,str);
+ }
+}
+printf("Longest substring=%s\n",longest);
+printf("Maximum number of characters=%d\n",maxlen);
+}
+output
+Enter number of strings2
+Enter a string
+beetroot
+Enter a string
+root
+Longest substring=beetroot
+Maximum number of characters=8
+```
+## Write a C program to sort a string array in ascending orde
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+for(int i=0;str[i]!='\0';i++){
+        for(int j=i+1;str[j]!='\0';j++){
+                if(str[i]>str[j]){
+                        char temp=str[i];
+                        str[i]=str[j];
+                        str[j]=temp;
+                }
+        }
+}
+printf("sorted string=%s",str);
+}
+output
+Enter a stringhello
+sorted string=ehllo
+```
+## . Write a program in C to extract a substring from a given string
+```
+#include <stdio.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+int start;
+int end;
+char substring[100];
+int j=0;
+printf("Enter start position");
+scanf("%d",&start);
+printf("Enter a end position");
+scanf("%d",&end);
+for(int i=start;i<=end&&str[i]!='\0';i++){
+        substring[j++]=str[i];
+}
+substring[j]='\0';
+printf("Extracted substring=%s\n",substring);
+return 0;
+}
+output
+Enter a stringgood morning
+Enter start position2
+Enter a end position5
+Extracted substring=od m
+```
+## 
 
-
+                                 
 
 
 
