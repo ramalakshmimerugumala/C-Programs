@@ -398,6 +398,54 @@ Enter start position2
 Enter a end position5
 Extracted substring=od m
 ```
+## 5. Write a program in C to read a sentence and replace lowercase characters with uppercase and vice versa
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i=0;
+while(str[i]!='\0'){
+        if(str[i]>='a'&& str[i]<='z'){
+                str[i]=str[i]-32;
+        }
+        else if(str[i]>='A' && str[i]<='Z'){
+                str[i]=str[i]+32;
+        }
+        i++;
+}
+printf("Converted string =%s",str);
+}
+output
+Enter a stringrama
+Converted string =RAMA
+```
+## Write a program in C to find the number of times a given word 'the' appears in the given string
+```
+#include <string.h>
+int main(){
+char str[100];
+char *token;
+int count=0;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+token=strtok(str," ");
+while(token!=NULL){
+        if(strcmp(token,"the")==0){
+                count ++;
+        }
+        token=strtok(NULL," ");
+}
+printf("count=%d\n",count);
+}
+output
+Enter a stringthe sun in the east
+count=2
+````
 ## 
 
                                  
