@@ -446,9 +446,93 @@ output
 Enter a stringthe sun in the east
 count=2
 ````
+## Write a program in C to find the frequency of characters
+```
+#include <string.h>
+int main(){
+char str[100];
+char visited[100]={0};
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int len=strlen(str);
+for(int i=0;i<len;i++){
+        if(visited[i]==1)
+                continue;
+        visited[i]=1;
+        int count=1;
+        for(int j=i+1;j<len;j++){
+                if(str[i]==str[j]){
+                        visited[j]=1;
+                        count ++;
+                }
+        }
+        printf("%c occurs %d times\n",str[i],count);
+}
+}
+output
+Enter a stringsriram
+s occurs 1 times
+r occurs 2 times
+i occurs 1 times
+a occurs 1 times
+m occurs 1 times
+```
+## Write a program in C to remove characters from a string except alphabets
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+char result[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i,j;
+ i=0;
+ j=0;
+while(str[i]!='\0'){
+if((str[i]>='A' && str[i]<='Z')||(str[i]>='a'&& str[i]<='z')){
+ result[j]=str[i];
+ j++;
+}
+i++;
+}
+result[j]='\0';
+printf("After removing %s\n",result);
+}
+output
+Enter a stringrama@34!
+After removing rama
+```
+## 9. Write a program in C to combine two strings manually
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str1[100];
+char str2[100];
+printf("Enter a string 1");
+fgets(str1,sizeof(str1),stdin);
+str1[strcspn(str1,"\n")]='\0';
+printf("Enter a string2");
+fgets(str2,sizeof(str2),stdin);
+str2[strcspn(str2,"\n")]='\0';
+int i=0;
+while(str1[i]!='\0'){
+        i++;
+}
+int j=0;
+while((str1[i++]=str2[j++])){
+}
+printf("combined string=%s",str1);
+}
+output
+Enter a string 1hii
+Enter a string2hello
+hiihello
+```
 ## 
-
-                                 
 
 
 
