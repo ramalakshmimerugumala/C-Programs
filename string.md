@@ -532,7 +532,193 @@ Enter a string 1hii
 Enter a string2hello
 hiihello
 ```
+## . Write a program in C to find the largest and smallest words in a string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[500];
+char *token;
+char largest[100];
+char smallest[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+token=strtok(str," ");
+strcpy(largest,token);
+strcpy(smallest,token);
+while(token!=NULL){
+        int len=strlen(token);
+        if(len>strlen(largest)){
+                strcpy(largest,token);
+        }
+        if(len<strlen(smallest)){
+                strcpy(smallest,token);
+        }
+        token=strtok(NULL," ");
+}
+printf("Largest word=%s",largest);
+printf("Smallest word=%s",smallest);
+}
+output
+Enter a stringsun rises in the east
+Largest word=rises
+Smallest word=in
+```
+## profram to find character is hexa digit or not
+```
+#include <stdio.h>
+int main(){
+char ch;
+printf("Enter a character");
+scanf("%c",&ch);
+if((ch>='0'&&ch<='9')||(ch>='A'&&ch<='F')||(ch>='a'&&ch<='f')){
+        printf("Hexadigit character");
+}
+        else{
+                printf("Not a hexa digit");
+        }
+}
+```
+## Write a program in C to replace the spaces in a string with a specific character
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+char ch;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+printf("Enter a specific character");
+scanf("%c",&ch);
+for(int i=0;str[i]!='\0';i++){
+        if(str[i]==' '){
+                str[i]=ch;
+        }
+}
+printf("final string=%s\n",str);
+}
+output
+Enter a stringthe penguin
+Enter a specific character_
+final string=the_penguin
+```
+## Write a program in C to count the number of punctuation characters present in a string
+```
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int count=0;
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+for(int i=0;str[i]!='\0';i++){
+        if(ispunct(str[i])){
+                count ++;
+        }
+}
+printf("count=%d",count);
+}
+output
+Enter a stringrama@1.,
+count=3
+```
+## Write a program in C to print only the string before the new line character
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+printf("%s",str);
+}
+output
+Enter a stringhello world
+hello world
+```
+## Write a program in C to split strings by space into words
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+char *token;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+token=strtok(str," ");
+while(token!=NULL){
+        printf("%s\n",token);
+token=strtok(NULL," ");
+}
+}
+output
+Enter a stringhello i am learning c
+hello
+i
+am
+learning
+c
+```
+## Write a C program to find the repeated character in a string
+```
+#include <string.h>
+int main(){
+char str[100];
+char visited[100]={0};
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int len=strlen(str);
+for(int i=0;i<len;i++){
+        if(visited[i]==1)
+                continue;
+                int count=1;
+        for(int j=i+1;j<len;j++){
+                if(str[i]==str[j]){
+                count ++;
+                visited[j]=1;
+        }
+        }
+        if(count>1 && str[i]!=' ')
+        printf("%c occurs %d times\n",str[i],count);
+}
+}
+output
+Enter a stringrama
+a occurs 2 times
+```
+## Write a C program to count each character in a given string
+```
+#include <string.h>
+int main(){
+char str[100];
+char visited[100]={0};
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int len=strlen(str);
+for(int i=0;i<len;i++){
+        if(visited[i]==1)
+                continue;
+                int count=1;
+        for(int j=i+1;j<len;j++){
+                if(str[i]==str[j]){
+                count ++;
+                visited[j]=1;
+        }
+        }
+        printf("%c occurs %d times\n",str[i],count);
+}
+}
+```
 ## 
+
 
 
 
