@@ -738,7 +738,45 @@ output
 Enter a stringthe sun
 thE sUn
 ```
-## 
+## Write a C program to find the length of the longest substring of a given string without repeating characters.
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int start=0;
+int maxlen=0;
+int maxstart;
+int len=strlen(str);
+for(int i=0;i<len;i++){
+        for(int j=start;j<i;j++){
+                if(str[i]==str[j]){
+                        start=j+1;
+                        break;
+                }
+        }
+        int currentlen=i-start+1;
+        if(currentlen>maxlen){
+                maxlen=currentlen;
+         maxstart=start;
+        }
+}
+printf("Longest non repeated substring");
+for(int k=0;k<maxlen;k++){
+        printf("%c ",str[maxstart+k]);
+}
+        printf("length=%d\n",maxlen);
+}
+output
+Enter a stringabafk
+Longest non repeated substringbafk
+length=4
+```
+
+
 
 
 
