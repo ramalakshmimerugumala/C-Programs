@@ -817,7 +817,33 @@ It is a valid string
 ```
 ## Write a C program to multiply two positive numbers as strings. Return a string representation of the product.
 ```
-
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int multi(char str1[],char str2[]);
+int main(){
+char str1[100];
+char str2[100];
+printf("Enter a string 1");
+fgets(str1,sizeof(str1),stdin);
+str1[strcspn(str1,"\n")]='\0';
+printf("Enter string2");
+fgets(str2,sizeof(str2),stdin);
+str2[strcspn(str2,"\n")]='\0';
+int result=multi(str1,str2);
+printf("result=%d",result);
+}
+int multi(char str1[],char str2[]){
+        int num1=atoi(str1);
+        int num2=atoi(str2);
+        return num1*num2;
+}
+output
+Enter a string 14
+Enter string25
+result=20
+```
+##
 
 
 
