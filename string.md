@@ -717,6 +717,27 @@ for(int i=0;i<len;i++){
 }
 }
 ```
+## . Write a C program to convert vowels into uppercase characters in a string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i=0;
+while(str[i]!='\0'){
+        if((str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U')||(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'))
+                str[i]=str[i]-32;
+        i++;
+}
+printf("%s",str);
+}
+output
+Enter a stringthe sun
+thE sUn
+```
 ## 
 
 
