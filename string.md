@@ -843,7 +843,77 @@ Enter a string 14
 Enter string25
 result=20
 ```
-##
+##  Write a C program to reverse all the vowels present in a given string. Return the newly created string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+char vowel[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int j=0;
+for(int i=0;str[i]!='\0';i++){
+        if((str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U')||(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')){
+                vowel[j]=str[i];
+                j++;
+        }
+}
+vowel[j]='\0';
+printf("%s\n",vowel);
+int len=strlen(vowel);
+printf("Reverse of vowels");
+char temp;
+for(int i=0,j=len-1;i<j;i++,j--){
+       temp=vowel[i];
+      vowel[i]=vowel[j];
+       vowel[j]=temp;
+}
+printf("%s ",vowel);
+j=0;
+for(int i=0;str[i]!='\0';i++){
+        if((str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U')||(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')){
+                str[i]=vowel[j++];
+        }
+}
+printf("\nfinal string %s",str);
+}
+output
+Enter a stringhello 
+eo
+Reverse of vowelsoe 
+final string holle
+```
+## palindrome string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int len=strlen(str);
+int ispalindrome=1;
+for(int i=0,j=len-1;i<j;i++,j--){
+        if(str[i]!=str[j]){
+                ispalindrome=0;
+                break;
+        }
+}
+if(ispalindrome){
+        printf("It is a palindrome string");
+}
+else{
+        printf("It is not a plaindrome string");
+}
+}
+```
+## 
+
+
+
 
 
 
