@@ -954,7 +954,68 @@ output
 Enter a stringabcsdgbab
 Longest palindromebab
 ```
-## 
+## Write a C program to calculate the length of the longest common subsequence of two given strings.
+```
+#include <stdio.h>
+#include <string.h>
+int max(int a,int b){
+        return a>b?a:b;
+}
+int main(){
+char str1[100];
+char str2[100];
+printf("Enter a string 1");
+fgets(str1,sizeof(str1),stdin);
+str1[strcspn(str1,"\n")]='\0';
+printf("Enter a string 2");
+fgets(str2,sizeof(str2),stdin);
+str2[strcspn(str2,"\n")]='\0';
+int len1=strlen(str1);
+int len2=strlen(str2);
+int dp[len1+1][len2+1];
+for(int i=0;i<=len1;i++){
+  for(int j=0;j<=len2;j++){
+          if(i==0||j==0){
+                  dp[i][j]=0;
+          }
+          else if(str1[i-1]==str2[j-1]){
+           dp[i][j]=1+dp[i-1][j-1];
+          }
+          else{
+                  dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+          }
+  }
+}
+int i=len1,j=len2;
+char lcs[100];
+int index=dp[len1][len2];
+lcs[index]='\0';
+while(i>0 &&j>0){
+        if(str1[i-1]==str2[j-1]){
+                lcs[index-1]=str1[i-1];
+                i--;
+                j--;
+                index--;
+        }
+        else if(dp[i-1][j]>dp[i][j-1])
+                i--;
+        else
+                j--;
+}
+   printf("LCS string=%s\n",lcs);
+  printf("Length of longest common subsequence %d",dp[len1][len2]);
+}
+output
+Enter a string 1abc
+Enter a string 2ac
+LCS string=ac
+Length of longest common subsequence 2
+```
+
+                                                              40,10-24      78%
+
+
+
                                 
 
 
