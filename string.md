@@ -910,7 +910,52 @@ else{
 }
 }
 ```
+##  Write a C program to find the longest palindromic substring from a given string. Return the substring
+```
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+bool ispalindrome(char str[],int left,int right){
+        while(left<right){
+          if(str[left]!=str[right]){
+                  return false;
+          }
+          left++;
+          right--;
+        }
+        return true;
+}
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int maxlen=0;
+int maxstart=0;
+int len=strlen(str);
+for(int i=0;i<len;i++){
+        for(int j=i;j<len;j++){
+                if(ispalindrome(str,i,j)){
+                        int currentlen=j-i+1;
+                        if(currentlen>maxlen){
+                                maxlen=currentlen;
+                                maxstart=i;
+                        }
+                }
+                        }
+
+}
+printf("Longest palindrome");
+for(int k=maxstart;k<maxstart+maxlen;k++){
+        printf("%c",str[k]);
+        }
+        }
+output
+Enter a stringabcsdgbab
+Longest palindromebab
+```
 ## 
+                                
 
 
 
