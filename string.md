@@ -1490,7 +1490,52 @@ output
 Enter the string'  hello  '
 Modified string =hello
 ```
-## 
+##  Write a C program to remove all extra blank spaces from given string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i=0;
+while(str[i]=='\''||str[i]=='"'||str[i]==' '||str[i]=='\t'||str[i]=='\n'){
+        i++;
+}
+int j=0;
+while(str[i]!='\0'){
+        str[j++]=str[i++];
+}
+str[j]='\0';
+int len=strlen(str);
+while(len>0 &&(str[len-1]=='\''||str[len-1]=='"'||str[len-1]==' '||str[len-1]=='\t'||str[len-1]=='\n')){
+        str[len-1]='\0';
+        len--;
+}
+i=0;
+j=0;
+int space_flag=0;
+while(str[i]!='\0'){
+        if(str[i]!=' '&& str[i]!='\t'){
+                str[j++]=str[i];
+                space_flag=0;
+        }
+        else{
+                if(space_flag==0){
+             str[j++]=' ';
+                        space_flag=1;
+                }
+        }
+        i++;
+}
+str[j]='\0';
+printf("Modified string :%s\n",str);
+}
+output
+Enter a string'  hello   world  '
+Modified string :hello world
+```
 
 
                        
