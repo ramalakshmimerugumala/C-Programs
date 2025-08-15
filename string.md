@@ -1011,8 +1011,39 @@ Enter a string 2ac
 LCS string=ac
 Length of longest common subsequence 2
 ```
+## Write a C program to compare two strings
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str1[100];
+char str2[100];
+int flag=0;
+printf("Enter a string1");
+fgets(str1,sizeof(str1),stdin);
+str1[strcspn(str1,"\n")]='\0';
+printf("Enter a string 2");
+fgets(str2,sizeof(str2),stdin);
+str2[strcspn(str2,"\n")]='\0';
+for(int i=0;str1[i]!='\0'||str2[i]!='\0';i++){
+                if(str1[i]!=str2[i]){
+                        flag=1;
+                        break;
+        }
+}
+if(flag==0){
+        printf("both are equal");
+}
+else{
+        printf("Both are not equal");
+}
+}
+output
+Enter a string1hello
+Enter a string 2hello
+both are equal
+```
 
-                                                              40,10-24      78%
 
 
 
