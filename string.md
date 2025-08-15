@@ -1296,6 +1296,61 @@ output
 Enter a stringheell
 Lowest frequency  h occurs 1 times
 ```
+## . Write a C program to remove all occurrences of a character from a string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char ch;
+printf("Enter a character");
+scanf("%c",&ch);
+int j=0;
+for(int i=0;str[i]!='\0';i++){
+        if(str[i]!=ch){
+          str[j]=str[i];
+          j++;
+        }
+}
+str[j]='\0';
+printf("After removing all occurances %c:%s",ch,str);
+}
+output
+Enter a stringhello world
+Enter a characterl
+After removing all occurances l:heo word
+```
+## Write a C program to remove all repeated characters from a given string.
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[200];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int len=strlen(str);
+for(int i=0;i<len;i++){
+        for(int j=i+1;j<len;j++){
+                if(str[i]==str[j]){
+                        for(int k=j;k<len;k++){
+                          str[k]=str[k+1];
+                        }
+                        j--;
+                        len--;
+                }
+}
+}
+printf("String after removing duplicates =%s",str);
+}
+output
+Enter a stringrama
+String after removing duplicates =ram
+```
+
 
 
 
