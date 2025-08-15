@@ -1350,6 +1350,150 @@ output
 Enter a stringrama
 String after removing duplicates =ram
 ```
+## Write a C program to replace the last occurrence of a character with another in a string.
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char ch;
+printf("Enter a character to replace");
+scanf(" %c",&ch);
+char newchar;
+printf("Enter a newcharacter");
+scanf(" %c",&newchar);
+int lastindex=-1;
+for(int i=0;str[i]!='\0';i++){
+        if(str[i]==ch){
+                lastindex=i;
+}
+}
+if(lastindex!=1){
+        str[lastindex]=newchar;
+}
+printf("Modified string=%s",str);
+}
+output
+Enter a stringhello world
+Enter a character to replaceo
+Enter a newcharacterx
+```
+## Write a C program to replace the first occurrence of a character with another in a string.
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("enter the string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char ch;
+printf("Enter a character");
+scanf(" %c",&ch);
+char new;
+printf("Enter new character to replace");
+scanf(" %c",&new);
+for(int i=0;str[i]!='\0';i++){
+        if(str[i]==ch){
+                str[i]=new;
+                break;
+                 }
+}
+printf("Modified string:%s\n",str);
+}
+output
+enter the stringhello
+Enter a characterl
+Enter new character to replacex
+Modified string:hexlo
+```
+## Write a C program to replace all occurrences of a character with another in a string.
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char ch;
+printf("Enter a character  to replace");
+scanf(" %c",&ch);
+char new;
+printf("enter a character");
+scanf(" %c",&new);
+for(int i=0;str[i]!='\0';i++){
+        if(str[i]==ch){
+                str[i]=new;
+        }
+}
+printf("Modified string %s",str);
+}
+output
+Enter a stringhello world
+Enter a character  to replacel
+enter a characterx
+Modified string hexxo worxd
+```
+## trim leading
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("enter a string:");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i=0;
+while(str[i]=='\''||str[i]=='"')i++;
+while(str[i]==' '||str[i]=='\t')
+        i++;
+int j=0;
+while(str[i]!='\0'){
+        str[j++]=str[i++];
+}
+str[j]='\0';
+printf("Modified string %s\n",str);
+}
+output
+enter a string:  hello
+modified string hello
+```
+## Write a C program to trim both leading and trailing white space characters from given string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter the string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i=0;
+while(str[i]=='\''|| str[i]=='"'||str[i]==' '||str[i]=='\t'||str[i]=='\n')
+        i++;
+int j=0;
+while(str[i]!='\0'){
+        str[j++]=str[i++];
+}
+str[j]='\0';
+int len=strlen(str);
+while(len>0&&(str[len-1]=='\''||str[len-1]=='"')||str[len-1]==' '||str[len-1]=='\t'||str[len-1]=='\n'){
+    str[len-1]='\0';
+    len --;
+    }
+printf("Modified string =%s",str);
+}
+output
+Enter the string'  hello  '
+Modified string =hello
+```
+## 
+
+
+                       
 
 
 
