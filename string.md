@@ -1043,6 +1043,260 @@ Enter a string1hello
 Enter a string 2hello
 both are equal
 ```
+## Write a C program to toggle the case of each character of a string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+for(int i=0;str[i]!='\0';i++){
+if(str[i]>='A' && str[i]<='Z'){
+        str[i]=str[i]+32;
+}
+else if(str[i]>='a' && str[i]<='z'){
+        str[i]=str[i]-32;
+}
+}
+printf("toggele= %s",str);
+}
+output
+Enter a stringRAMA
+toggele= rama
+```
+## Write a C program to reverse order of words in a given string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+int len=0;
+printf("Enter the string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i=0;
+while(str[len]!='\0'){
+       if(str[len]=='\n'){
+               str[len]='\0';
+               break;
+       }
+       len++;
+}
+char temp;
+int j;
+for(i=0,j=len-1;i<j;i++,j--){
+      temp=str[i];
+      str[i]=str[j];
+      str[j]=temp;
+}
+printf("First revese=%s\n",str);
+for(i=0,j=len-1;i<j;i++,j--){
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+}
+printf("Orginal string=%s\n",str);
+}
+output
+Enter the stringi know
+First revese=wonk i
+Orginal string=i know
+```
+## . Write a C program to find the first occurrence of a character in a given string.
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char ch;
+printf("Enter the character to search");
+scanf(" %c",&ch);
+int found=0;
+int i;
+for(i=0;str[i]!='\0';i++){
+        if(str[i]==ch){
+                found=1;
+                break;
+        }
+}
+if(found==1){
+        printf("Fist occurence %c character found at index=%d",ch,i);
+}
+else{
+        printf("not found");
+}
+}
+output
+Enter a stringhello world
+Enter the character to searcho
+Fist occurence o character found at index=4
+```
+## Write a C program to find the last occurrence of a character in a given string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str1[100];
+printf("Enter the string");
+fgets(str1,sizeof(str1),stdin);
+str1[strcspn(str1,"\n")]='\0';
+char ch;
+printf("Enter a character to search");
+scanf("%c",&ch);
+int found=0;
+int lastindex=-1;
+int i;
+for(i=0;str1[i]!='\0';i++){
+        if(str1[i]==ch){
+                found=1;
+                lastindex=i;
+                 }
+}
+if(lastindex!=-1){
+        printf("Last occurence %c character found at index=%d\n",ch,lastindex);
+}
+else{
+        printf("Not found");
+}
+}
+output
+Enter the stringhello world
+Enter a character to searcho
+Last occurence o character found at index=7
+```
+## Write a C program to search all occurrences of a character in a given string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char ch;
+printf("Enter a character");
+scanf("%c",&ch);
+int found=0;
+int i;
+for(i=0;str[i]!='\0';i++){
+        if(str[i]==ch){
+                printf("occurs at =%d ",i);
+                found=1;
+        }
+}
+if(!found){
+        printf("None");
+}
+printf("\n");
+}
+output
+Enter a stringhello world
+Enter a charactero
+occurs at =4 occurs at =7
+```
+## . Write a C program to count occurrences of a character in a given string.
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int i;
+int count=0;
+char ch;
+printf("Enter a character");
+scanf("%c",&ch);
+for(i=0;str[i]!='\0';i++){
+        if(str[i]==ch){
+                count ++;
+        }
+}
+printf("%c occurs %d times\n",ch,count);
+}
+output
+Enter a stringhello world
+Enter a characterl
+character l occurs 3 times
+```
+##  Write a C program to find the highest frequency character in a string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+int visited[100]={0};
+int maxcount=0;
+char maxchar;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int len=strlen(str);
+int count;
+for(int i=0;i<len;i++){
+        if(visited[i]==1){
+                continue;
+        }
+           count=1;
+for(int j=i+1;j<len;j++){
+                if(str[i]==str[j]){
+                        visited[j]=1;
+                        count ++;
+                }
+        }
+if(count>maxcount){
+        maxcount=count;
+        maxchar=str[i];
+}
+}
+printf("Highest frequency =%c occurs %d times",maxchar,maxcount);
+}
+  output
+Enter a stringrama
+Highest frequency =a occurs 2 times
+```
+## . Write a C program to find the lowest frequency character in a string
+```
+#include<stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+int visited[100]={0};
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int len=strlen(str);
+int count;
+int mincount=len;
+char minchar;
+for(int i=0;i<len;i++){
+        if(visited[i]==1)
+                continue;
+                count=1;
+        for(int j=i+1;j<len;j++){
+     if(str[i]==str[j]){
+                        visited[j]=1;
+                        count++;
+                }
+        }
+        if(count<mincount){
+                mincount=count;
+                minchar=str[i];
+        }
+}
+printf("Lowest frequency  %c occurs %d times",minchar,mincount);
+}
+output
+Enter a stringheell
+Lowest frequency  h occurs 1 times
+```
+
 
 
 
