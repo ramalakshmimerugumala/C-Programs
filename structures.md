@@ -202,5 +202,35 @@ printf("Enter day month year:");
 output
 Enter day month year:4 12 1990
 1990 is not a leap year
-                       
+```
+##  4. Define a structure to represent a complex number with real and imaginary parts (both floats). Write a function to add two complex numbers represented by structures
+```
+#include <stdio.h>
+struct complex{
+        float real;
+        float imag;
+};
+struct complex addcomplex(struct complex c1,struct complex c2){
+        struct complex sum;
+        sum.real=c1.real+c2.real;
+        sum.imag=c1.imag+c2.imag;
+        return sum;
+}
+int main(){
+        struct complex num1,num2,result;
+        printf("Enter first complex number");
+        scanf("%f %f",&num1.real,&num1.imag);
+        printf("Enter second complex number");
+        scanf("%f %f",&num2.real,&num2.imag);
+        result=addcomplex(num1,num2);
+        printf("sum=%.2f+%.2fi\n",result.real,result.imag);
+}
+output
+Enter first complex number2 4
+Enter second complex number3 6
+sum=5.00+10.00i
+```
+## 
+
+
 
