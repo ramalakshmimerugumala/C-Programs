@@ -1,4 +1,4 @@
-## Structute pointers
+## 1. Structute pointers
 ```
 #include <stdio.h>
 struct book{
@@ -57,7 +57,7 @@ Enter a choice2
 Enter a number6
 you entererd number=6.000
 ```
-## . Define a structure to represent a point in 2D space with x and y coordinates (both integers). Write a function to check if two points are equal (have the same x and y coordinates)
+## 3 Define a structure to represent a point in 2D space with x and y coordinates (both integers). Write a function to check if two points are equal (have the same x and y coordinates)
 ```
 #include <stdio.h>
 struct point{
@@ -88,7 +88,7 @@ Enter the coordinates of point11 2
 Enter the coordinates of point 21 2 
 Both are equal
 ```
-## Create a structure to represent a book with the following members: title (string), author (string),ISBN (long int), and number of pages (int). Write a function to accept details of a book from the user and store them in a structure variable.
+## 4 Create a structure to represent a book with the following members: title (string), author (string),ISBN (long int), and number of pages (int). Write a function to accept details of a book from the user and store them in a structure variable.
 ```
 #include <stdio.h>
 struct book{
@@ -131,4 +131,76 @@ author:Denni
 isbn:123455678i
 pages:580
 ```
-## 
+## 5.Define a union to represent the size of a product, which can be specified in centimeters, inches, or feet. Write a function to convert the size from one unit to another (e.g., centimeters to inches). 
+```
+#include <stdio.h>
+union size{
+        float cm;
+        float inch;
+        float feet;
+};
+float convert(float value,char from,char to){
+        float cm;
+        if(from=='c')
+                cm=value;
+        else if(from=='i')
+                cm=value*2.54;
+        else if(from=='f')
+                cm=value*30.54;
+        if(to=='c')
+                return cm;
+        if(to=='i')
+return cm/2.54;
+        if(to=='f')
+                return cm/30.48;
+        return -1;
+        }
+int main(){
+        union size s;
+        char from,to;
+        printf("Enter the size value");
+        scanf("%f",&s.cm);
+        printf("Enter from unit");
+        scanf(" %c",&from);
+        printf("Enter to unit(c,i,f)");
+        scanf(" %c",&to);
+        float result=convert(s.cm,from,to);
+        printf("Converted value=%.2f\n",result);
+}
+output
+Enter the size value12
+Enter from unitc
+Enter to unit(c,i,f)i
+Converted value=4.72
+```
+## Define a structure to represent a date with day, month, and year (all integers). Write a function to check if a given year is a leap year
+```
+#include <stdio.h>
+struct date{
+        int day;
+        int month;
+        int year;
+};
+int isleapyear(int year){
+        if(year %400==0)
+                return 1;
+        else if(year %100==0)
+                return 0;
+        else if(year %4==0)
+                return 1;
+        else return 0;
+}
+int main(){
+        struct date d;
+printf("Enter day month year:");
+        scanf("%d %d %d",&d.day,&d.month,&d.year);
+        if(isleapyear(d.year))
+                printf("%d is a leap year",d.year);
+        else
+                printf("%d is not a leap year",d.year);
+}
+output
+Enter day month year:4 12 1990
+1990 is not a leap year
+                       
+
