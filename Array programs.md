@@ -1854,8 +1854,95 @@ Enter the size of array:5
 Enter the elements in the array1 2 3 4 5
 54321
 ```
-
-
+## array 180
+```
+#include <stdio.h>
+int main(){
+int arr[100][100];
+int n;
+printf("Enter the size of rows and columns");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);}
+}
+int temp;
+for(int i=0;i<n;i++){
+        for(int j=0;j<n/2;j++){
+       temp=arr[i][j];
+       arr[i][j]=arr[i][n-1-j];
+       arr[i][n-1-j]=temp;
+        }
+}
+for(int i=0;i<n/2;i++){
+        for(int j=0;j<n;j++){
+                temp=arr[i][j];
+                arr[i][j]=arr[n-1-i][j];
+                arr[n-1-i][j]=temp;
+        }
+}
+printf("Array rotation in 180 \n");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+}
+}
+output
+Enter the size of rows and columns3
+Enter the elements in the array1 2 3 4 5 6 7 8 9 
+Array rotation in 180 
+9 8 7 
+6 5 4 
+3 2 1
+```
+## Array rotation by 270
+```
+#include <stdio.h>
+int main(){
+int arr[100][100];
+int n;
+printf("Enter the size of rows and columns");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+int temp;
+for(int i=0;i<n;i++){
+        for(int j=i;j<n;j++){
+        temp=arr[i][j];
+        arr[i][j]=arr[j][i];
+        arr[j][i]=temp;
+        }
+}
+for(int i=0;i<n/2;i++){
+        for(int j=0;j<n;j++){
+                temp=arr[i][j];
+                arr[i][j]=arr[n-1-i][j];
+                arr[n-1-i][j]=temp;
+        }
+}
+ptrn;
+printf("Array rotation in 270 degrees\n");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+}
+}
+output
+Enter the size of rows and columns3
+Enter the elements in the array 1 2 3 4 5 6 7 8 9
+Array rotation in 270 degrees
+3 6 9 
+2 5 8 
+1 4 7
 
 
 
