@@ -622,7 +622,60 @@ Value=5	Address=0x7fff1e5c64f0
 values=5	Address=0x7fff1e5c64f0
 Value=6	Address=0x7fff1e5c64f4
 values=6	Address=0x7fff1e5c64f4
-
+```
+## Program to invoke a function using function pointer
+```
+#include <stdio.h>
+int sum(int,int);
+int main(){
+int s=0;
+int (*ptr)(int,int)=sum;
+s=(*ptr)(1,2);
+printf("Sum=%d",s);
+}
+int sum(int a,int b){
+        return a+b;
+}
+```
+## . Program to send a function ‘s address as an argument to other function
+```
+#include <stdio.h>
+void sum(int a,int b){
+        printf("sum=%d\n",a+b);
+}
+void sub(int a ,int b){
+        printf("sub=%d\n",a-b);
+}
+void display(void (*fptr)(int,int)){
+        fptr(5,1);
+}
+void main(){
+        display(sum);
+        display(sub);
+}
+```
+##  Program to pass a pointer containing functions arguments address as an argument
+```
+#include <stdio.h>
+void sum(int *a,int *b){
+        printf("sum=%d\n",*a+*b);
+}
+void sub(int *a,int *b){
+        printf("sub=%d\n",*a-*b);
+}
+void display(void (*fptr)(int*,int*),int *x,int *y){
+        fptr(x,y);
+}
+void main(){
+        int num1=5;
+        int num2=4;
+        display(sum,&num1,&num2);
+        display(sub,&num1,&num2);
+}
+output
+sum=9
+sub=1
+```
 
 
 
