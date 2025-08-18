@@ -304,7 +304,35 @@ output
 15101051
 1615201561
 ```
-## 
+##  even or odd using bitwise
+```
+#include <stdio.h>
+int main(){
+int num;
+printf("Enter a number");
+scanf("%d",&num);
+if(num&1){
+        printf("%d is  an odd number",num);
+}
+else{
+        printf("%d is an eve number",num);
+}
+}
+```
+## little endian
+```
+#include <stdio.h>
+int main(){
+unsigned int x=1;
+unsigned char *ptr=(unsigned char*)&x;
+if(*ptr==1){
+        printf("Little endian");
+}
+        else{
+                printf("Big Endian");
+        }
+}
+```
 
                                               
 
