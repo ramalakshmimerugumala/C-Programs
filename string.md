@@ -1536,6 +1536,88 @@ output
 Enter a string'  hello   world  '
 Modified string :hello world
 ```
+## substring found
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+char sub[100];
+int found=0;
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+printf("Enter a substring");
+fgets(sub,sizeof(sub),stdin);
+sub[strcspn(sub,"\n")]='\0';
+int len1=strlen(str);
+int len2=strlen(sub);
+int j;
+for(int i=0;i<len1-len2+1;i++){
+        for(j=0;j<len2;j++){
+                if(str[i+j]!=sub[j]){
+                        break;
+                }
+        }
+        if(j==len2){
+                found=1;
+break;
+        }
+}
+if(found){
+        printf("substring found");
+}
+else{
+        printf("Substring is not found");
+}
+}
+
+output
+Enter a stringabcabb
+Enter a substringabc
+substring found
+```
+## Deleting a specific word from a given string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+char del[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+printf("Enter a string to delte");
+fgets(del,sizeof(del),stdin);
+del[strcspn(del,"\n")]='\0';
+int match;
+int len1=strlen(str);
+int len2=strlen(del);
+int j;
+for(int i=0;i<len1-len2+1;i++){
+        int match=1;
+        for(j=0;j<len2;j++){
+                if(str[i+j]!=del[j]){
+                        match=0;
+                        break;
+                }
+        }
+if(match){
+                for(int k=i;k<len1-len2+1;k++){
+                        str[k]=str[k+len2];
+                }
+                len1=len1-len2;
+                i--;
+        }
+}
+printf("After deleting %s\n",str);
+}
+output
+Enter a stringi love moon
+Enter a string to deltelove
+After deleting i  moon
+```
+## 
 
 
                        
