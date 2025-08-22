@@ -1617,7 +1617,70 @@ Enter a stringi love moon
 Enter a string to deltelove
 After deleting i  moon
 ```
-## 
+##  captalize each word first letter
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+for(int i=0;str[i]!='\0';i++){
+        if(i==0 ||str[i-1]==' '){
+                if(str[i]>='a'&& str[i]<='z'){
+                        str[i]=str[i]-32;
+                }
+        }
+}
+printf("captialized string=%s",str);
+}
+output
+Enter a stringrama lakshmi
+captialized string=Rama Lakshmi
+```
+##  Removing special characters from string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+int j=0;
+for(int i=0;str[i]!='\0';i++){
+if((str[i]>='A' && str[i]<='Z')||
+  (str[i]>='a' && str[i]<='z')||
+  (str[i]>='0' && str[i]<='9')){
+  str[j++]=str[i];
+}
+}
+str[j]='\0';
+printf("string=%s",str);
+}
+output
+Enter a stringrama@12#%^
+string=rama12
+```
+
+## convert string to int
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+int num=0;
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+for(int i=0;str[i]!='\0';i++){
+num=num*10+(str[i]-'0');
+}
+printf("Integer value=%d",num);
+}
+output
+
 
 
                        
