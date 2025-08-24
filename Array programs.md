@@ -1943,6 +1943,100 @@ Array rotation in 270 degrees
 3 6 9 
 2 5 8 
 1 4 7
+```
+##  sort colunm wise
+```
+#include <stdio.h>
+int main(){
+int n;
+int arr[100][100];
+printf("Enter the size of matrix");
+scanf("%d",&n);
+printf("Enter the elements in the matrix");
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                scanf("%d",&arr[i][j]);
+        }
+}
+for(int j=0;j<n;j++){
+        for(int i=0;i<n-1;i++){
+                for(int k=0;k<n-i-1;k++){
+                        if(arr[k][j]>arr[k+1][j]){
+                                int temp=arr[k][j];
+                                arr[k][j]=arr[k+1][j];
+                                arr[k+1][j]=temp;
+                        }
+                }
+        }
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d",arr[i][j]);
+        }
+        printf("\n");
+}
+}
+output
+Enter the size of matrix3
+Enter the elements in the matrix 9 8 7 6 5 4 3 2 1
+321
+654
+987
+```
+## sort row wise
+```
+#include <stdio.h>
+int main(){
+int n;
+int arr[100][100];
+printf("Enter the size of  array");
+scanf("%d",&n);
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+        scanf("%d",&arr[i][j]);
+}
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d",arr[i][j]);
+        }
+        printf("\n");
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n-1;j++){
+          for(int k=0;k<n-j-1;k++){
+                  if(arr[i][k]>arr[i][k+1]){
+                          int temp=arr[i][k];
+                          arr[i][k]=arr[i][k+1];
+                          arr[i][k+1]=temp;
+                  }
+          }
+        }
+
+}
+for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+                printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+}
+}
+output
+Enter the size of  array3
+1 4 3 7 4 2 8 1 5
+143
+742
+815
+1 3 4 
+2 4 7 
+1 5 8
+```
+
+
+                                                             
+
+
+                                                                   
 
 
 
