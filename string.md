@@ -1680,6 +1680,58 @@ num=num*10+(str[i]-'0');
 printf("Integer value=%d",num);
 }
 output
+Enter a string24
+Integer value=24
+```
+## Anagram
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+char visited[100]={0};
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char str2[100];
+printf("Enter a string");
+fgets(str2,sizeof(str2),stdin);
+str2[strcspn(str2,"\n")]='\0';
+int len=strlen(str);
+int len2=strlen(str2);
+if(len!=len2){
+        printf("Anagram is not possible");
+        return 0;
+}
+for(int i=0;i<len;i++){
+        if(visited[i]==1)
+                continue;
+        int count=1;
+        for(int j=i+1;j<len;j++){
+if(str[i]==str[j]){
+                        visited[j]=1;
+                        count ++;
+                }
+        }
+        int count1=0;
+        for(int k=0;k<len2;k++){
+                if(str2[k]==str[i]){
+                        count1 ++;
+        }
+}
+if(count1!=count){
+        printf("Not anagram");
+        return 0;
+}
+}
+        printf("Anagram");
+}
+output
+Enter a stringsilent
+Enter a stringlisten
+Anagram
+```
+## 
 
 
 
