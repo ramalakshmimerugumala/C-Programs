@@ -1731,7 +1731,40 @@ Enter a stringsilent
 Enter a stringlisten
 Anagram
 ```
-## 
+##  Revesing each word in a string
+```
+#include <stdio.h>
+#include <string.h>
+void reversestring(char str[],int start,int end){
+        while(start<end){
+                char temp=str[start];
+                str[start]=str[end];
+                str[end]=temp;
+                start ++;
+                end--;
+        }
+}
+int main(){
+        char str[100];
+        printf("Enter a string");
+        fgets(str,sizeof(str),stdin);
+        str[strcspn(str,"\n")]='\0';
+        int len=strlen(str);
+        int start=0;
+        for(int i=0;i<=len;i++){
+                if(str[i]==' '||str[i]=='\0'){
+                        int end=i-1;
+ reversestring(str,start,end);
+                        start=i+1;
+                }
+        }
+        printf("Reverse of each word %s",str);
+}
+
+output
+nter a stringrama lakshmi
+Reverse of each word amar imhskal
+
 
 
 
