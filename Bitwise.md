@@ -1,5 +1,5 @@
 ## 1. Write a program to clear 4th and 2nd bit of a number input by user
-```
+```c
 #include <stdio.h>
 int main(){
 unsigned int num;
@@ -13,7 +13,7 @@ Enter a number0x53
 After clearing 4th and 2nd bit=67
 ```
 ## 2.Write a program to set 5th ,3rd &1st bit of the number by user
-```
+```c
 #include <stdio.h>
 int main(){
 unsigned int num;
@@ -27,7 +27,7 @@ Enter a number0x53
 123
 ```
 ## 3.Write a program to find the state of 3rd and 2nd bit input by user
-```
+```c
 #include <stdio.h>
 int main(){
 unsigned int num;
@@ -48,7 +48,7 @@ Enter a number0x54
 3rd bit is clear
 ```
 ## 4. Write  a program to toggle 7th,5th,4th, and 1st by taking the user input
-```
+```c
 #include <stdio.h>
 int main(){
 unsigned int num;
@@ -62,7 +62,7 @@ Enter a number0x53
 After toggling=225
 ```
 ## 5 Write a program to count number of set bits in a number
-```
+```c
 #include <stdio.h>
 int main(){
 unsigned int num;
