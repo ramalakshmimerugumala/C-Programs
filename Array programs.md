@@ -2095,7 +2095,38 @@ Enter the size of an arry5
 Enter the elements in the array1 0 0 0 0
 Length=4
 ```
-## 
+##  Move all Zeroes to end
+```
+#include <stdio.h>
+int main(){
+ int n;
+ int arr[100];
+ printf("Enter the size of the array");
+ scanf("%d",&n);
+ printf("Enter the elements in the array");
+ for(int i=0;i<n;i++){
+     scanf("%d",&arr[i]);
+ }
+ int j=0;
+  for(int i=0;i<n;i++){
+      if(arr[i]!=0){
+          arr[j++]=arr[i];
+      }
+  }
+  while(j<n){
+      arr[j++]=0;
+  }
+  printf("After moving Zeroes to end\n");
+  for(int i=0;i<n;i++){
+      printf("%d ",arr[i]);
+  }
+}
+output
+Enter the size of the array5
+Enter the elements in the array1 0 0 3 1
+After moving Zeroes to end
+1 3 1 0 0
+```
 
 
                                                              
