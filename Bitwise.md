@@ -80,3 +80,98 @@ output
 Enter a number0x53
 count=4
 ```
+## 6.write a program to check wheather the number is power of 2 or not using biwise
+```c
+#include <stdio.h>
+int main(){
+int num;
+printf("Enter a number");
+scanf("%d",&num);
+if(num>0&&(num&(num-1))==0){
+        printf("Power of 2");
+}
+else{
+        printf("Not a power of 2");
+}
+}
+output
+Enter a number128
+Power of 2
+```
+## 7.Write a program divide by 2
+```c
+#include <stdio.h>
+int main(){
+int num;
+printf("Enter a number");
+scanf("%d",&num);
+int res;
+res=num>>1;
+printf("%d",res);
+}
+output
+Enter a number2
+1
+```
+## 8. write a program to print binary digits of a number by user input
+```c
+ hexa decimal
+
+#include <stdio.h>
+int main(){
+unsigned int num;
+printf("Enter a number");
+scanf("%i",&num);
+for(int i=31;i>=0;i--){
+        int bit=(num>>i)&1;
+        printf("%u",bit);
+        if(i%4==0)
+                printf("\n");
+}
+printf("Hexadecimal %x\n",num);
+}
+output
+Enter a number0x53
+0000
+0000
+0000
+0000
+0000
+0000
+0101
+0011
+Hexadecimal 53
+```
+using int
+```c
+#include <stdio.h>
+int main(){
+int num;
+printf("Enter a number");
+scanf("%d",&num);
+for(int i=31;i>=0;i--){
+        int bit=(num>>i)&1;
+        printf("%d",bit);
+}
+printf("\n");
+}
+output
+Enter a number6
+00000000000000000000000000000110
+```
+## write a program to swap lower and higher nibbles of a number by user input
+```c
+include <stdio.h>
+int main(){
+unsigned int num,result;
+printf("Enter a number");
+scanf("%i",&num);
+result=((num&0x0F)<<4)|((num&0xF0)>>4);
+printf("orginal num=0x%x\n",num);
+printf("swapped number=0x%x\n",result);
+}
+output
+Enter a number0x53
+orginal num=0x53
+swapped number=0x35
+```
