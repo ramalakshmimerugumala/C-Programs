@@ -2031,6 +2031,71 @@ Enter the size of  array3
 2 4 7 
 1 5 8
 ```
+## product of 3 large numbers in the array
+```
+#include <stdio.h>
+int main(){
+int n;
+int arr[100];
+printf("Enter the size of the array");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+        }
+}
+}
+int prod1=arr[n-1]*arr[n-2]*arr[n-3];
+int prod2=arr[0]*arr[1]*arr[n-1];
+int maxprod=(prod1>prod2)?prod1:prod2;
+printf("prod=%d",maxprod);
+}
+output
+Enter the size of the array5
+Enter the elements in the array1 -4 3 -6 7  
+prod=168
+```
+## Maximum consecutive one’s (or zeros) in a binary array
+```
+#include <stdio.h>
+int main(){
+int n;
+printf("Enter the size of an arry");
+scanf("%d",&n);
+int arr[100];
+int count=1;
+int maxcount=1;
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+for(int i=1;i<n;i++){
+        if(arr[i]==arr[i-1]){
+                count ++;
+
+        if(count >maxcount){
+ maxcount=count;
+        }
+        }
+        else{
+                count=1;
+        }
+}
+printf("Length=%d\n",maxcount);
+}
+output
+Enter the size of an arry5
+Enter the elements in the array1 0 0 0 0
+Length=4
+```
+## 
 
 
                                                              
