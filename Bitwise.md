@@ -159,7 +159,7 @@ output
 Enter a number6
 00000000000000000000000000000110
 ```
-## write a program to swap lower and higher nibbles of a number by user input
+## 9. write a program to swap lower and higher nibbles of a number by user input
 ```c
 include <stdio.h>
 int main(){
