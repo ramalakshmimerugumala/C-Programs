@@ -2127,7 +2127,49 @@ Enter the elements in the array1 0 0 3 1
 After moving Zeroes to end
 1 3 1 0 0
 ```
-
+## Reverse an Array in groups of given size
+```
+#include <stdio.h>
+void reverse(int arr[],int l,int r){
+        while(l<r){
+                int temp=arr[l];
+                arr[l]=arr[r];
+                arr[r]=temp;
+                l++;
+                r--;
+        }
+}
+int groupreverse(int arr[],int n,int k){
+        for(int i=0;i<n;i=i+k){
+        int left=i;
+        int right=(i+k-1<n)?(i+k-1):(n-1);
+        reverse(arr,left,right);
+}
+}
+int main(){
+int n;
+printf("Enter the size of an array");
+scanf("%d",&n);
+int arr[100];
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+int k;
+printf("Enter k value");
+scanf("%d",&k);
+groupreverse(arr,n,k);
+for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+}
+}
+output
+Enter the size of an array5
+Enter the elements in the array1 2 3 4 5
+Enter k value2
+2 1 4 3 5
+````
+##
 
                                                              
 
