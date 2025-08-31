@@ -175,3 +175,82 @@ Enter a number0x53
 orginal num=0x53
 swapped number=0x35
 ```
+## 10 How to check if a particular bit is set or not in a number
+```c
+#include <stdio.h>
+int main(){
+unsigned int num;
+printf("Enter a number");
+scanf("%u",&num);
+int pos;
+printf("Enter the position(0-31)");
+scanf("%d",&pos);
+if(num&(1<<pos))
+printf("bit %d is set in %u num",pos,num);
+else
+ printf("Bit %d not set in %u num",pos,num);
+}
+output
+Enter a number16
+Enter the position(0-31)2
+Bit 2 not set in 16 num
+```
+## 11 How to set if a particular bit is set or not in a number
+```c
+#include <stdio.h>
+int main(){
+int num;
+printf("Enter a number");
+scanf("%d",&num);
+int pos;
+printf("Enter a position");
+scanf("%d",&pos);
+num=num|(1<<pos);
+printf("After setting bit %d at number %d",pos,num);
+}
+output
+Enter a number12
+Enter a position1
+After setting bit 1 at number 14
+```
+## 12 Toggle a given range of bits For example, take the number 245. The equivalent binary format is 11110101and the range is 4 to 7. So, the output should be 000001010 which is 5 in decimal
+```c
+#include <stdio.h>
+int main(){
+unsigned int num,start,end;
+printf("Enter a number");
+scanf("%u",&num);
+printf("Enter a start value");
+scanf("%u",&start);
+printf("Enter a end value");
+scanf("%u",&end);
+unsigned int mask=((1<<end-start+1)-1)<<start;
+unsigned result=num^mask;
+printf("After toggling %u",result);
+}
+output
+Enter a number245
+Enter a start value4
+Enter a end value7
+After toggling 5
+```
+## 13 Write MACRO to Swap the bytes in 16 bit Integer Variable
+```c
+#include <stdio.h>
+#define swap_bytes(x) ((x&0x00FF)<<8)|((x&0xFF00)>>8)
+int main(){
+unsigned short num;
+printf("Enter a number");
+scanf("%hx",&num);
+unsigned short swapped=swap_bytes(num);
+printf("Original num=0x%04X\n",num);
+printf("After swapped=0x%04X\n",swapped);
+}
+output
+Enter a number0x1234
+Original num=0x1234
+After swapped=0x3412
+```
+## 14.
+
+
