@@ -68,7 +68,6 @@ for(int i=0;i<len;i++){
          }
           else{
                   j++;
-                          j++;
           }
   }
 }
@@ -1764,6 +1763,61 @@ int main(){
 output
 nter a stringrama lakshmi
 Reverse of each word amar imhskal
+```
+or 
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char str[100];
+    printf("Enter a string");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int start=0;
+    int len=strlen(str);
+    for(int i=0;i<=len;i++){
+        if(str[i]==' '){
+            for(int j=i-1;j>=start;j--){
+                printf("%c",str[j]);
+                }
+                printf(" ");
+                start=i+1;
+        }
+    }
+    for(int j=len-1;j>=start;j--){
+        printf("%c",str[j]);
+    }
+}
+````
+## reverse order of words
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char str[100];
+    printf("Enter a string");
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    int len=strlen(str);
+    int end=len-1;
+    for(int i=end;i>=0;i--){
+        if(str[i]==' '){
+            for(int j=i+1;j<=end;j++){
+                printf("%c",str[j]);
+                }
+                printf(" ");
+                end=i-1;
+        }
+    }
+    for(int j=0;j<=end;j++){
+        printf("%c",str[j]);
+    }
+}
+output
+Enter a stringvivan embedded
+embedded vivan
+```
+## 
 
 
 
