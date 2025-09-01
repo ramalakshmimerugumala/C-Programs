@@ -2169,7 +2169,45 @@ Enter the elements in the array1 2 3 4 5
 Enter k value2
 2 1 4 3 5
 ````
-##
+## Wave array
+```
+#include <stdio.h>
+int main(){
+int n;
+ printf("Enter the size of an array");
+ scanf("%d",&n);
+ int arr[100];
+ printf("Enter the elements in the array");
+ for(int i=0;i<n;i++){
+         scanf("%d",&arr[i]);
+ }
+ for(int i=0;i<n;i++){
+  for(int j=i+1;j<n;j++){
+          if(arr[i]>arr[j]){
+                  int temp=arr[i];
+                  arr[i]=arr[j];
+                  arr[j]=temp;
+          }
+}
+ }
+ for(int i=0;i<n-1;i=i+2){
+   int temp=arr[i];
+   arr[i]=arr[i+1];
+   arr[i+1]=temp;
+ }
+ printf("Wave array\n");
+  for(int i=0;i<n;i++){
+          printf("%d ",arr[i]);
+  }
+}
+output
+Enter the size of an array6
+Enter the elements in the array9 4 2 8 1 5
+Wave array
+2 1 5 4 9 8
+```
+## 
+
 
                                                              
 
