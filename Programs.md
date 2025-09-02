@@ -333,7 +333,31 @@ if(*ptr==1){
         }
 }
 ```
-
-                                              
+## plus one to arary    
+```
+#include <stdio.h>
+#include <math.h>
+int main(){
+int n;
+int arr[100];
+printf("Enter the size of an array");
+scanf("%d",&n);
+int sum=0;
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+    scanf("%d",&arr[i]);
+}
+int d=pow(10,n-1);
+for(int i=0;i<n;i++){
+    sum+=arr[i]*d;
+    d=d/10;
+}
+printf("%d",sum+1);
+}
+output
+Enter the size of an array4
+Enter the elements in the array1 2 3 4
+1235
+```
 
 
