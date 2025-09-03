@@ -359,5 +359,36 @@ Enter the size of an array4
 Enter the elements in the array1 2 3 4
 1235
 ```
-
+## Array leader
+```
+#include <stdio.h>
+int main(){
+int n;
+int leader[100];
+int k=0;
+int arr[100];
+printf("Enter the size of an array");
+scanf("%d",&n);
+printf("Enter the elements in the array");
+for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+}
+int right_most=arr[n-1];
+leader[k++]=right_most;
+for(int i=n-1;i>=0;i--){
+        if(arr[i]>right_most){
+                right_most=arr[i];
+leader[k++]=right_most++;
+        }
+}
+for(int i=k-1;i>=0;i--){
+        printf("%d ",leader[i]);
+}
+}
+output
+Enter the size of an array6
+Enter the elements in the array16 17 4 3 5 2
+17 5 2
+```
+## 
 
