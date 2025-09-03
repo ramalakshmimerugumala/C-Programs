@@ -390,5 +390,48 @@ Enter the size of an array6
 Enter the elements in the array16 17 4 3 5 2
 17 5 2
 ```
-## 
-
+##  Rearrange the values by sign
+```
+#include <stdio.h>
+int main(){
+    int n;
+    int arr[100];
+    int positive[100];
+    int negative[100];
+    int result[100];
+    int pi=0;
+    int ni=0;
+    printf("Enter the size of an array");
+    scanf("%d",&n);
+    printf("Enter the elements in the array");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(int i=0;i<n;i++){
+        if(arr[i]>=0){
+            positive[pi++]=arr[i];
+        }
+        else{
+            negative[ni++]=arr[i];
+        }
+    }
+    int p=0,q=0,i=0;
+    while(p<pi &&q<ni){
+        result[i++]=positive[p++];
+        result[i++]=negative[q++];
+    }
+    while(p<pi){
+        result[i++]=positive[p++];
+    }
+    while(q<ni){
+        result[i++]=negative[q++];
+    }
+    for(int k=0;k<n;k++){
+        printf("%d ",result[k]);
+    }
+   }
+output
+Enter the size of an array5
+Enter the elements in the array1 3 -3 2 -8
+1 -3 3 -8 2
+```
