@@ -435,3 +435,34 @@ Enter the size of an array5
 Enter the elements in the array1 3 -3 2 -8
 1 -3 3 -8 2
 ```
+## Removing all the occurances
+```
+#include <stdio.h>
+int main(){
+    int n;
+    int arr[100];
+    printf("Enter the size of the array");
+    scanf("%d",&n);
+    int num;
+    printf("Enter the elements in the array");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the number to remove");
+    scanf("%d",&num);
+    int j=0;
+    for(int i=0;i<n;i++){
+        if(arr[i]!=num){
+            arr[j++]=arr[i];
+        }
+    }
+    for(int i=0;i<j;i++){
+        printf("%d ",arr[i]);
+    }
+}
+output
+Enter the size of the array5
+Enter the elements in the array1 2 3 3 4
+Enter the number to remove3
+1 2 4
+```
