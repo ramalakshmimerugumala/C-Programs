@@ -1817,7 +1817,42 @@ output
 Enter a stringvivan embedded
 embedded vivan
 ```
-## 
+## C program sort storing in array
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+int n;
+char str[10][50];
+char temp[50];
+printf("Enter number of strings");
+scanf("%d",&n);
+printf("Enter a string");
+for(int i=0;i<n;i++){
+        scanf("%s",str[i]);
+}
+for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+                if(strcmp(str[j],str[j+1])>0){
+                        strcpy(temp,str[j]);
+                        strcpy(str[j],str[j+1]);
+                          strcpy(str[j+1],temp);
+                }
+        }
+}
+printf("Sorted strings");
+for(int i=0;i<n;i++){
+        printf("%s ",str[i]);
+}
+}
+output
+Enter number of strings3
+Enter a stringmango
+banana
+apple
+Sorted strings apple banana mango
+```
+
 
 
 
