@@ -466,3 +466,31 @@ Enter the elements in the array1 2 3 3 4
 Enter the number to remove3
 1 2 4
 ```
+## swap two strings
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string1");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char str2[100];
+printf("Enter string 2");
+fgets(str2, sizeof(str2),stdin);
+int len=strlen(str);
+int len2=strlen(str2);
+for(int i=0;i<len||i<len2;i++){
+        char temp=str[i];
+        str[i]=str2[i];
+        str2[i]=temp;
+        }
+printf("string 1=%s",str);
+printf("String 2=%s",str2);
+}
+output
+Enter a string1hello
+Enter string 2hii
+string 1=hii
+String 2=hello
+```
