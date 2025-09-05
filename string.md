@@ -1852,6 +1852,63 @@ banana
 apple
 Sorted strings apple banana mango
 ```
+## Insering word in string
+```
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+str[strcspn(str,"\n")]='\0';
+char word[50];
+int position;
+printf("Enter a position");
+scanf("%d",&position);
+printf("Enter the a word to insert");
+scanf("%s",word);
+int index=position-1;
+int len=strlen(str);
+int wordlen=strlen(word);
+for(int i=len-1;i>=index;i--){
+        str[i+wordlen]=str[i];
+}
+for(int i=0;i<wordlen;i++){
+str[index+i]=word[i];
+}
+printf("%s",str);
+}
+output
+Enter a stringrama lakshmi
+Enter a position5
+Enter the a word to insertui
+ramaui lakshmi
+```
+## Deleting word in a string
+```
+#include <stdio.h>
+#include <string.h>
+int main(){
+char str[100];
+printf("Enter a string");
+fgets(str,sizeof(str),stdin);
+int position;
+printf("Enter a position");
+scanf("%d",&position);
+int len=strlen(str);
+char word[50];
+printf("Enter a word");
+scanf("%s",word);
+int wordlen=strlen(word);
+for(int i=position;i<=len-wordlen;i++){
+        str[i]=str[i+wordlen];
+}
+printf("%s",str);
+}
+Enter a stringrama lakshmi
+Enter a position5 
+Enter a wordlakshmi
+rama
+```
 
 
 
