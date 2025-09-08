@@ -494,3 +494,49 @@ Enter string 2hii
 string 1=hii
 String 2=hello
 ```
+## 
+```
+#include <string.h>
+int main(){
+char str[10][50];
+char temp[50];
+int n;
+printf("Enter number of strings");
+scanf("%d",&n);
+printf("ENter a string");
+for(int i=0;i<n;i++){
+scanf("%s",str[i]);
+}
+for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+                if(strcmp(str[j],str[j+1])>0){
+                        strcpy(temp,str[j]);
+                        strcpy(str[j],str[j+1]);
+                        strcpy(str[j+1],temp);           }
+        }
+}
+for(int i=0;i<n;i++){
+        printf("%s ",str[i]);
+}
+printf("\n common prefix ");
+char *first=str[0];
+char *last=str[n-1];
+int i=0;
+while(first[i] && last[i] &&first[i]==last[i]){
+        printf("%c",first[i]);
+        i++;
+}
+if(i==0){
+        printf(" ");
+}
+}
+output
+Enter number of strings4
+ENter a stringgeeksforgeeks
+geeks
+geek
+geezer
+geek geeks geeksforgeeks geezer 
+ common prefix gee
+```
+
