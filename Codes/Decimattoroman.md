@@ -28,6 +28,7 @@ if(number>=1)
    printf("\n");
    return 0;
 }
+
 output
 Enter a number6
 VI
