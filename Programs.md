@@ -494,7 +494,7 @@ Enter string 2hii
 string 1=hii
 String 2=hello
 ```
-## 
+##  Common Prefix
 ```
 #include <string.h>
 int main(){
@@ -539,4 +539,27 @@ geezer
 geek geeks geeksforgeeks geezer 
  common prefix gee
 ```
+## addition of fisrt adn last eqaul to 1
+```
+#include <stdio.h>
+int main(){
+int n;
+printf("Enter a number");
+scanf("%d",&n);
+int lastdigit;
+int midd;
+int first;
+  lastdigit=n%10;
+  midd=(n/10)%10;
+  first=n/100;
 
+if(first+lastdigit==midd){
+        printf("Sucess");
+}
+else{
+        printf("NOt");
+}
+}
+output
+Enter a number242
+Sucess
