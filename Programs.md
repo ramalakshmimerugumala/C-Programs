@@ -539,7 +539,7 @@ geezer
 geek geeks geeksforgeeks geezer 
  common prefix gee
 ```
-## addition of fisrt adn last eqaul to 1
+## Addition of fisrt and last eqaul to Middle
 ```
 #include <stdio.h>
 int main(){
